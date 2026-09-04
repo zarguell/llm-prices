@@ -1,0 +1,30 @@
+{
+  "include": [
+    "openai/gpt-5.6",
+    "openai/gpt-5.6-luna",
+    "zai/glm-5.3",
+    "zai/glm-5.3-flash",
+    "deepseek/deepseek-v4-flash",
+    "meta-llama/llama-4-scout",
+    "meta-llama/llama-4-maverick",
+    "qwen/qwen3.8-27b",
+    "meta/muse-spark-1.2-contributor",
+    "tencent/hy4-preview",
+    "qwen/qwen3.8-flash"
+  ],
+  "exclude": [],
+  "tier_override": {
+    "openai/gpt-5.6": "frontier",
+    "openai/gpt-5.6-luna": "efficient",
+    "zai/glm-5.3": "efficient",
+    "zai/glm-5.3-flash": "efficient",
+    "deepseek/deepseek-v4-flash": "efficient",
+    "meta-llama/llama-4-scout": "workhorse",
+    "meta-llama/llama-4-maverick": "workhorse",
+    "qwen/qwen3.8-27b": "workhorse",
+    "meta/muse-spark-1.2-contributor": "workhorse",
+    "tencent/hy4-preview": "efficient",
+    "qwen/qwen3.8-flash": "efficient"
+  },
+  "_comment": "Includes models without OR benchmarks (GPT-5.6, GLM-5.3, etc.) and forces specific tiers for key models."
+}

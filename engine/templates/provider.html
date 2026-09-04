@@ -14,7 +14,7 @@
     <th data-sort="num">cache write /M</th>
     <th data-sort="num">context</th>
     <th data-sort="num">max out</th>
-    <th>tools</th><th>reason</th><th>weights</th><th>released</th>
+    <th>tools</th><th>reason</th><th>weights</th><th>type</th><th>released</th>
   </tr></thead>
   <tbody>
   {% for m in rows %}
@@ -33,6 +33,7 @@
     <td>{{ '✓' if m.tool_call else '' }}</td>
     <td>{{ '✓' if m.reasoning else '' }}</td>
     <td>{{ 'open' if m.open_weights else '' }}</td>
+    <td>{{ m.mtype }}</td>
     <td>{{ m.release_date or '—' }}</td>
   </tr>
   {% endfor %}

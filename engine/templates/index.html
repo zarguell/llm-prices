@@ -27,9 +27,9 @@
 {% endif %}
 
 <section>
-  <h2>Cheapest priced models <span class="muted">(input, $/M tokens · zero-priced excluded)</span></h2>
+  <h2>Cheapest chat models <span class="muted">(input, $/M tokens · transcription/TTS excluded · zero-priced excluded)</span></h2>
   <table class="sortable">
-    <thead><tr><th>model</th><th>provider</th><th data-sort="num">input /M</th><th data-sort="num">output /M</th><th data-sort="num">context</th></tr></thead>
+    <thead><tr><th>model</th><th>provider</th><th data-sort="num">input /M</th><th data-sort="num">output /M</th><th data-sort="num">context</th><th>type</th></tr></thead>
     <tbody>
     {% for m in cheapest %}
       <tr>
@@ -38,6 +38,7 @@
         <td data-v="{{ m.input or '' }}">${{ '%.4f'|format(m.input) }}</td>
         <td data-v="{{ m.output or '' }}">${{ '%.4f'|format(m.output) }}</td>
         <td data-v="{{ m.context or 0 }}">{{ '{:,}'.format(m.context) if m.context else '—' }}</td>
+        <td>{{ m.mtype if m.mtype != 'chat' else '' }}</td>
       </tr>
     {% endfor %}
     </tbody>

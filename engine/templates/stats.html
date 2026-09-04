@@ -6,9 +6,11 @@
    {{ stats.providers_n }} providers · data as of {{ data_date }}.</p>
 
 <section>
-  <h2>Cheapest 25 <span class="muted">(input /M)</span></h2>
-  <p class="muted">Excludes {{ stats.zero_priced_n }} zero-priced models
-     (free tiers / unlisted rates).</p>
+  <h2>Cheapest 25 <span class="muted">(chat models · input /M)</span></h2>
+  <p class="muted">Chat models only (text in → text out, generating tokens —
+     excludes transcription, TTS, image-out, embedding and reranker models)
+     and {{ stats.zero_priced_n }} zero-priced models (free tiers / unlisted
+     rates).</p>
   <table class="sortable">
     <thead><tr><th>model</th><th data-sort="num">input /M</th><th data-sort="num">output /M</th></tr></thead>
     <tbody>{% for m in stats.cheapest %}
@@ -40,6 +42,18 @@
           <td data-v="{{ m.input }}">${{ '%.4f'|format(m.input) }}</td>
           <td data-v="{{ m.output }}">${{ '%.4f'|format(m.output) }}</td>
           <td data-v="{{ m.context }}">{{ '{:,}'.format(m.context) }}</td></tr>
+    {% endfor %}</tbody>
+  </table>
+</section>
+
+<section>
+  <h2>Modality mix <span class="muted">(all {{ stats.priced_n }} priced models)</span></h2>
+  <table class="sortable">
+    <thead><tr><th>type</th><th data-sort="num">models</th><th data-sort="num">median input /M</th></tr></thead>
+    <tbody>{% for m in stats.modality_mix %}
+      <tr><td>{{ m.mtype }}</td>
+          <td data-v="{{ m.n }}">{{ m.n }}</td>
+          <td data-v="{{ m.median_input or 0 }}">{{ '$%.4f'|format(m.median_input) if m.median_input else '—' }}</td></tr>
     {% endfor %}</tbody>
   </table>
 </section>

@@ -20,6 +20,9 @@
         without published prices appear in provider tables without rates.</li>
     <li>Missing cache rates mean the provider publishes no separate cache price
         (treated as no surcharge/discount listed, not zeroed by this site).</li>
+    <li>Rankings cover chat models (text in → text out). Task-specific ids —
+        embeddings, rerankers, guard/moderation, speech — are excluded via a
+        keyword filter, since their per-token rates aren’t chat-comparable.</li>
     <li>Trend charts are log-scale; single-snapshot archives show points, not lines.</li>
     <li>Change detection diffs consecutive snapshots: added/removed model ids and
         input/output price moves &gt; 0.</li>

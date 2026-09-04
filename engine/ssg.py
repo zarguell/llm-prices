@@ -31,6 +31,7 @@ import html
 import json
 import math
 import os
+import re
 import statistics
 from datetime import datetime, timezone
 
@@ -76,6 +77,30 @@ def _f(v):
         return None
 
 
+def _mtype(inputs: list[str], outputs: list[str]) -> str:
+    """Human model type from modalities (chat / multimodal / transcription
+    / audio-out / ...). Used for rankings + the modality-mix table.
+    Missing modalities default to text (same as text_in/text_out)."""
+    i, o = set(inputs), set(outputs)
+    if not i:
+        i = {"text"}
+    if not o:
+        o = {"text"}
+    if "audio" in o:
+        return "audio out"
+    if "image" in o:
+        return "image out"
+    if "audio" in i and "text" not in i:
+        return "transcription"
+    if "text" not in i:
+        return "non-text in"
+    if "audio" in i:
+        return "omni"
+    if i - {"text"}:
+        return "chat multimodal"
+    return "chat"
+
+
 def flatten(providers: dict) -> list[dict]:
     """Deterministic row per model: pricing + capability metadata."""
     rows = []
@@ -109,6 +134,9 @@ def flatten(providers: dict) -> list[dict]:
                 "release_date": m.get("release_date") or "",
                 "inputs": modal.get("input") or [],
                 "outputs": modal.get("output") or [],
+                "text_in": (not modal.get("input")) or "text" in modal["input"],
+                "text_out": (not modal.get("output")) or "text" in modal["output"],
+                "mtype": _mtype(modal.get("input") or [], modal.get("output") or []),
             })
     return rows
 
@@ -147,12 +175,38 @@ def _median(vals):
     return statistics.median(vals) if vals else None
 
 
+def _modality_mix(priced: list[dict]) -> list[dict]:
+    """Model count + median input rate per derived type, count desc."""
+    buckets: dict[str, list] = {}
+    for r in priced:
+        buckets.setdefault(r["mtype"], []).append(r["input"])
+    mix = []
+    for mtype, inputs in buckets.items():
+        mix.append({"mtype": mtype, "n": len(inputs),
+                    "median_input": _median(inputs)})
+    mix.sort(key=lambda m: (-m["n"], m["mtype"]))
+    return mix
+
+
+def _rankable(r: dict) -> bool:
+    """Heuristic: task-specific model ids (embeddings, rerankers, guard/
+    moderation, speech) don't belong in chat-price rankings even when their
+    modalities read text->text. Id-keyword based, documented in About."""
+    return not re.search(
+        r"embed|rerank|guard|moderat|whisper|transcrib|\btts\b|speech|diariz",
+        r["key"], re.IGNORECASE)
+
+
 def compute_stats(rows: list[dict]) -> dict:
     priced = [r for r in rows if r["priced"]]
-    # Zero-priced entries (free tiers / unlisted upstream rates) would wall
-    # the top of every ranking — ranked tables and medians use strictly
-    # positive rates; the zero-priced count stays visible on the stats page.
-    ranked = [r for r in priced if (r["input"] or 0) > 0]
+    # Rankings cover chat models only (text in -> text out): transcription
+    # (whisper-style), TTS and image-out models price per task, not per chat
+    # token, and would mislead a "cheapest LLM" table. Zero-priced entries
+    # (free tiers / unlisted rates) are excluded for the same reason.
+    chat = [r for r in priced if r["text_in"] and r["text_out"] and _rankable(r)]
+    # output > 0 removes embeddings/rerankers (input-only billing)
+    ranked = [r for r in chat if (r["input"] or 0) > 0 and (r["output"] or 0) > 0]
+    zero_priced_n = len([r for r in priced if (r["input"] or 0) == 0])
     with_tools_ctx = [r for r in ranked if r["tool_call"]
                       and (r["context"] or 0) >= 128_000]
     by_provider = {}
@@ -186,7 +240,9 @@ def compute_stats(rows: list[dict]) -> dict:
         "priciest": sorted(ranked, key=lambda r: (-r["input"], -r["output"], r["key"]))[:10],
         "best_value": sorted(with_tools_ctx,
                              key=lambda r: (r["input"], r["output"], r["key"]))[:25],
-        "zero_priced_n": len(priced) - len(ranked),
+        "zero_priced_n": zero_priced_n,
+        "chat_only": True,
+        "modality_mix": _modality_mix(priced),
         "open_median": _median(open_m),
         "open_n": len(open_m),
         "closed_median": _median(closed_m),

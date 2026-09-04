@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}Pricing trends — {{ site_name }}{% endblock %}
+{% block body %}
+<h1>Pricing trends</h1>
+<p class="muted">Weekly snapshots for tracked models (log scale, USD per million tokens).
+   Tracked list: <code>engine/tracked.json</code>. Charts render once ≥1 snapshot exists;
+   lines connect as history accumulates.</p>
+{% if snapshots_n < 2 %}
+<p class="note">Archive has {{ snapshots_n }} snapshot{{ 's' if snapshots_n != 1 }} —
+   single points today. Lines appear from the second weekly snapshot on
+   ({{ '{:,}'.format(2 - snapshots_n) if snapshots_n < 2 }} more week{{ 's' if snapshots_n != 2 }}).</p>
+{% endif %}
+{% if chart_in_svg %}
+<h2>Input price /M</h2>
+<div class="chartbox">{{ chart_in_svg|safe }}</div>
+{% endif %}
+{% if chart_out_svg %}
+<h2>Output price /M</h2>
+<div class="chartbox">{{ chart_out_svg|safe }}</div>
+{% endif %}
+<h2>Tracked models</h2>
+<ul>
+  {% for t in tracked %}<li><code>{{ t }}</code></li>{% endfor %}
+</ul>
+{% endblock %}

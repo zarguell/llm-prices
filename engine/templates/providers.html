@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block title %}Provider analytics — {{ site_name }}{% endblock %}
+{% block body %}
+<h1>Provider analytics</h1>
+<p class="muted">Catalog shape and pricing coverage per provider · data as of {{ data_date }}.</p>
+<table class="sortable">
+  <thead><tr>
+    <th>provider</th><th data-sort="num">models</th><th data-sort="num">priced</th>
+    <th data-sort="num">coverage %</th><th data-sort="num">median input /M</th>
+  </tr></thead>
+  <tbody>
+  {% for p in stats.providers %}
+  <tr>
+    <td><a href="{{ r }}prices/{{ p.provider }}/index.html">{{ p.name }}</a></td>
+    <td data-v="{{ p.models }}">{{ p.models }}</td>
+    <td data-v="{{ p.priced }}">{{ p.priced }}</td>
+    <td data-v="{{ p.coverage }}">{{ p.coverage }}%</td>
+    <td data-v="{{ p.median_input or 0 }}">{{ '$%.2f'|format(p.median_input) if p.median_input else '—' }}</td>
+  </tr>
+  {% endfor %}
+  </tbody>
+</table>
+
+<section>
+  <h2>Open vs closed weights <span class="muted">(priced models, input /M)</span></h2>
+  <table>
+    <thead><tr><th></th><th>models</th><th>median input /M</th></tr></thead>
+    <tbody>
+    <tr><td>open weights</td><td>{{ stats.open_n }}</td>
+        <td>{{ '$%.3f'|format(stats.open_median) if stats.open_median else '—' }}</td></tr>
+    <tr><td>closed</td><td>{{ stats.closed_n }}</td>
+        <td>{{ '$%.3f'|format(stats.closed_median) if stats.closed_median else '—' }}</td></tr>
+    </tbody>
+  </table>
+</section>
+{% endblock %}

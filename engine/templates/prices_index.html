@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Prices by provider — {{ site_name }}{% endblock %}
+{% block body %}
+<h1>Prices by provider</h1>
+<p class="muted">{{ stats.priced_n }} of {{ stats.models_n }} models publish prices.
+   All rates are USD per million tokens. Pick a provider:</p>
+<div class="grid">
+  {% for p in providers %}
+  <a class="card" href="{{ r }}prices/{{ p.provider }}/index.html">
+    <span class="pname">{{ p.name }}</span>
+    <span class="pmeta">{{ p.models }} models · {{ p.priced }} priced ({{ p.coverage }}%){% if p.median_input %} · median ${{ '%.2f'|format(p.median_input) }}/M in</span>{% endif %}
+  </a>
+  {% endfor %}
+</div>
+{% endblock %}

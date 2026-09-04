@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block title %}Stats — {{ site_name }}{% endblock %}
+{% block body %}
+<h1>Stats &amp; analytics</h1>
+<p class="muted">Derived from {{ stats.priced_n }} priced models across
+   {{ stats.providers_n }} providers · data as of {{ data_date }}.</p>
+
+<section>
+  <h2>Cheapest 25 <span class="muted">(input /M)</span></h2>
+  <table class="sortable">
+    <thead><tr><th>model</th><th data-sort="num">input /M</th><th data-sort="num">output /M</th></tr></thead>
+    <tbody>{% for m in stats.cheapest %}
+      <tr><td><code>{{ m.key }}</code></td>
+          <td data-v="{{ m.input }}">${{ '%.4f'|format(m.input) }}</td>
+          <td data-v="{{ m.output }}">${{ '%.4f'|format(m.output) }}</td></tr>
+    {% endfor %}</tbody>
+  </table>
+</section>
+
+<section>
+  <h2>Priciest 10 <span class="muted">(input /M)</span></h2>
+  <table>
+    <tbody>{% for m in stats.priciest %}
+      <tr><td><code>{{ m.key }}</code></td>
+          <td>${{ '%.2f'|format(m.input) }}</td>
+          <td>${{ '%.2f'|format(m.output) }}</td></tr>
+    {% endfor %}</tbody>
+  </table>
+</section>
+
+<section>
+  <h2>Best value <span class="muted">tool calling + ≥128k context, cheapest input</span></h2>
+  <table class="sortable">
+    <thead><tr><th>model</th><th data-sort="num">input /M</th><th data-sort="num">output /M</th>
+    <th data-sort="num">context</th></tr></thead>
+    <tbody>{% for m in stats.best_value %}
+      <tr><td><code>{{ m.key }}</code></td>
+          <td data-v="{{ m.input }}">${{ '%.4f'|format(m.input) }}</td>
+          <td data-v="{{ m.output }}">${{ '%.4f'|format(m.output) }}</td>
+          <td data-v="{{ m.context }}">{{ '{:,}'.format(m.context) }}</td></tr>
+    {% endfor %}</tbody>
+  </table>
+</section>
+
+<section>
+  <h2>Open vs closed weights <span class="muted">(median input /M)</span></h2>
+  <p>open: {{ stats.open_n }} models, median ${{ '%.3f'|format(stats.open_median) if stats.open_median else '—' }}
+     · closed: {{ stats.closed_n }} models, median ${{ '%.3f'|format(stats.closed_median) if stats.closed_median else '—' }}</p>
+  <p class="muted">Full per-provider breakdown: <a href="{{ r }}providers/index.html">Providers</a>.</p>
+</section>
+{% endblock %}

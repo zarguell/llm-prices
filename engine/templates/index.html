@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% block body %}
+<section class="hero">
+  <h1>LLM API prices, archived weekly</h1>
+  <p class="tagline">Every model, every provider, one table — tracked over time.
+     Data from <a href="https://models.dev">models.dev</a>. No usage telemetry, no cookies.</p>
+  <div class="tiles">
+    <div class="tile"><span class="n">{{ stats.providers_n }}</span><span class="l">providers</span></div>
+    <div class="tile"><span class="n">{{ stats.models_n }}</span><span class="l">models</span></div>
+    <div class="tile"><span class="n">{{ stats.priced_n }}</span><span class="l">priced ({{ stats.coverage }}%)</span></div>
+    <div class="tile"><span class="n">${{ '%.2f'|format(stats.median_input) if stats.median_input else '—' }}</span><span class="l">median input /M</span></div>
+  </div>
+</section>
+
+{% if diff and (diff.added or diff.removed or diff.changed) %}
+<section>
+  <h2>Since last week <span class="muted">({{ diff.added|length }} new · {{ diff.changed|length }} price moves · {{ diff.removed|length }} removed)</span></h2>
+  <ul class="difflist">
+    {% for k in diff.added[:5] %}<li class="up">new <code>{{ k }}</code></li>{% endfor %}
+    {% for ch in diff.changed[:5] %}
+    <li class="{{ 'up' if ch.new > ch.old else 'down' }}"><code>{{ ch.key }}</code> {{ ch.field }}
+        ${{ '%.2f'|format(ch.old) }} → ${{ '%.2f'|format(ch.new) }}{% if ch.pct %} ({{ '%+.1f'|format(ch.pct) }}%){% endif %}</li>
+    {% endfor %}
+  </ul>
+  <p><a href="{{ r }}changes/index.html">All changes →</a></p>
+</section>
+{% endif %}
+
+<section>
+  <h2>Cheapest priced models <span class="muted">(input, $/M tokens)</span></h2>
+  <table class="sortable">
+    <thead><tr><th>model</th><th>provider</th><th data-sort="num">input /M</th><th data-sort="num">output /M</th><th data-sort="num">context</th></tr></thead>
+    <tbody>
+    {% for m in cheapest %}
+      <tr>
+        <td>{{ m.name }}</td>
+        <td><a href="{{ r }}prices/{{ m.provider }}/index.html">{{ m.provider }}</a></td>
+        <td data-v="{{ m.input or '' }}">${{ '%.4f'|format(m.input) }}</td>
+        <td data-v="{{ m.output or '' }}">${{ '%.4f'|format(m.output) }}</td>
+        <td data-v="{{ m.context or 0 }}">{{ '{:,}'.format(m.context) if m.context else '—' }}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  <p class="muted">Click column headers to sort. Full tables per provider under <a href="{{ r }}prices/index.html">Prices</a>.</p>
+</section>
+
+<section>
+  <h2>Providers <span class="muted">({{ stats.providers_n }})</span></h2>
+  <div class="grid">
+    {% for p in stats.providers %}
+    <a class="card" href="{{ r }}prices/{{ p.provider }}/index.html">
+      <span class="pname">{{ p.name }}</span>
+      <span class="pmeta">{{ p.priced }}/{{ p.models }} priced{% if p.median_input %} · median ${{ '%.2f'|format(p.median_input) }}/M{% endif %}</span>
+    </a>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

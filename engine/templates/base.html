@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% block title %}{{ site_name }}{% endblock %}</title>
+<link rel="stylesheet" href="{{ r }}style.css">
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="{{ r }}index.html">{{ site_name }}</a>
+  <nav>
+    <a href="{{ r }}index.html">Home</a>
+    <a href="{{ r }}prices/index.html">Prices</a>
+    <a href="{{ r }}providers/index.html">Providers</a>
+    <a href="{{ r }}trends/index.html">Trends</a>
+    <a href="{{ r }}changes/index.html">Changes</a>
+    <a href="{{ r }}stats/index.html">Stats</a>
+    <a href="{{ r }}about/index.html">About</a>
+  </nav>
+</header>
+<main>
+{% block body %}{% endblock %}
+</main>
+<footer>
+  <p>Data: <a href="https://models.dev">models.dev</a> · weekly snapshots ·
+     data as of <strong>{{ data_date }}</strong> · built {{ generated }} ·
+     {{ snapshots_n }} snapshot{{ 's' if snapshots_n != 1 }} archived ·
+     no usage telemetry published.</p>
+</footer>
+<script>
+function sortTable(th, numeric) {
+  const table = th.closest("table");
+  const tbody = table.tBodies[0];
+  const idx = Array.from(th.parentNode.children).indexOf(th);
+  const dir = th.dataset.dir === "asc" ? -1 : 1;
+  th.dataset.dir = dir === 1 ? "asc" : "desc";
+  Array.from(table.tHead.rows[0].cells).forEach(c => { if (c !== th) delete c.dataset.dir; });
+  const rows = Array.from(tbody.rows);
+  rows.sort((a, b) => {
+    let x = a.cells[idx].dataset.v ?? a.cells[idx].textContent.trim();
+    let y = b.cells[idx].dataset.v ?? b.cells[idx].textContent.trim();
+    if (numeric) { x = parseFloat(x); y = parseFloat(y);
+      if (isNaN(x)) x = -Infinity; if (isNaN(y)) y = -Infinity;
+      return (x - y) * dir; }
+    return x.localeCompare(y) * dir;
+  });
+  rows.forEach(r => tbody.appendChild(r));
+}
+</script>
+</body>
+</html>

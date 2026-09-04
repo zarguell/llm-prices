@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block title %}Changes — {{ site_name }}{% endblock %}
+{% block body %}
+<h1>Changes</h1>
+{% if not diff %}
+<p class="note">Baseline snapshot ({{ data_date }}) — the archive needs two weekly
+   snapshots before changes can be computed. First diff lands next week.</p>
+{% else %}
+<p class="muted">Diff of {{ prev_date }} → {{ data_date }}.</p>
+<h2>New models <span class="muted">({{ diff.added|length }})</span></h2>
+{% if diff.added %}
+<table class="sortable"><thead><tr><th>model</th></tr></thead><tbody>
+{% for k in diff.added %}<tr><td><code>{{ k }}</code></td></tr>{% endfor %}
+</tbody></table>
+{% else %}<p class="muted">none</p>{% endif %}
+
+<h2>Removed models <span class="muted">({{ diff.removed|length }})</span></h2>
+{% if diff.removed %}
+<table><tbody>
+{% for k in diff.removed %}<tr><td><code>{{ k }}</code></td></tr>{% endfor %}
+</tbody></table>
+{% else %}<p class="muted">none</p>{% endif %}
+
+<h2>Price changes <span class="muted">({{ diff.changed|length }})</span></h2>
+{% if diff.changed %}
+<table class="sortable">
+  <thead><tr><th>model</th><th>bucket</th><th data-sort="num">old /M</th>
+  <th data-sort="num">new /M</th><th data-sort="num">change</th></tr></thead>
+  <tbody>
+  {% for ch in diff.changed %}
+  <tr>
+    <td><code>{{ ch.key }}</code></td><td>{{ ch.field }}</td>
+    <td data-v="{{ ch.old }}">${{ '%.4f'|format(ch.old) }}</td>
+    <td data-v="{{ ch.new }}">{{ '$%.4f'|format(ch.new) }} <span class="{{ 'up' if ch.new > ch.old else 'down'}}">{{ '▲' if ch.new > ch.old else '▼' }}</span></td>
+    <td data-v="{{ ch.pct or 0 }}">{{ '%+.1f'|format(ch.pct) if ch.pct else '—' }}%</td>
+  </tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% else %}<p class="muted">none — prices held steady this week</p>{% endif %}
+{% endif %}
+{% endblock %}

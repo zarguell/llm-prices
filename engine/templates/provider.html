@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block title %}{{ provider_name }} prices — {{ site_name }}{% endblock %}
+{% block body %}
+<h1>{{ provider_name }} <span class="muted">({{ provider }})</span></h1>
+<p class="muted">{{ rows|selectattr("priced")|list|length }} of {{ rows|length }} models publish prices ·
+   rates USD per million tokens · data as of {{ data_date }} ·
+   <a href="{{ r }}providers/index.html">provider analytics</a></p>
+<table class="sortable">
+  <thead><tr>
+    <th>model</th>
+    <th data-sort="num">input /M</th>
+    <th data-sort="num">output /M</th>
+    <th data-sort="num">cache read /M</th>
+    <th data-sort="num">cache write /M</th>
+    <th data-sort="num">context</th>
+    <th data-sort="num">max out</th>
+    <th>tools</th><th>reason</th><th>weights</th><th>released</th>
+  </tr></thead>
+  <tbody>
+  {% for m in rows %}
+  <tr>
+    <td>{{ m.name }} <code class="mid">{{ m.id }}</code></td>
+    {% if m.priced %}
+    <td data-v="{{ m.input or '' }}">{{ '$%.4f'|format(m.input) if m.input is not none else '—' }}</td>
+    <td data-v="{{ m.output or '' }}">{{ '$%.4f'|format(m.output) if m.output is not none else '—' }}</td>
+    <td data-v="{{ m.cache_read or 0 }}">{{ '$%.4f'|format(m.cache_read) if m.cache_read is not none else '—' }}</td>
+    <td data-v="{{ m.cache_write or 0 }}">{{ '$%.4f'|format(m.cache_write) if m.cache_write is not none else '—' }}</td>
+    {% else %}
+    <td>—</td><td>—</td><td>—</td><td>—</td>
+    {% endif %}
+    <td data-v="{{ m.context or 0 }}">{{ '{:,}'.format(m.context) if m.context else '—' }}</td>
+    <td data-v="{{ m.max_output or 0 }}">{{ '{:,}'.format(m.max_output) if m.max_output else '—' }}</td>
+    <td>{{ '✓' if m.tool_call else '' }}</td>
+    <td>{{ '✓' if m.reasoning else '' }}</td>
+    <td>{{ 'open' if m.open_weights else '' }}</td>
+    <td>{{ m.release_date or '—' }}</td>
+  </tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

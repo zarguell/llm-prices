@@ -27,6 +27,10 @@ def _providers():
             "mimo": {"name": "MiMo", "tool_call": True, "open_weights": True,
                      "limit": {"context": 1000000},
                      "cost": {"input": 0.14, "output": 0.28}},
+            "free-tier": {"name": "Free Tier",
+                          "cost": {"input": 0.0, "output": 0.0}},
+            "half-free": {"name": "Half Free",
+                          "cost": {"input": 0.0, "output": 9.9}},
         }},
     }
 
@@ -52,7 +56,7 @@ def _write_snaps(data_dir):
 
 def test_flatten_extracts_pricing_and_capabilities():
     rows = ssg.flatten(_providers())
-    assert len(rows) == 3
+    assert len(rows) == 5
     by_key = ssg.by_key(rows)
     glm = by_key["zai/glm-flash"]
     assert glm["priced"] and glm["input"] == 0.1 and glm["output"] == 0.2
@@ -78,15 +82,23 @@ def test_diff_detects_adds_removes_and_moves():
 
 def test_stats_coverage_best_value_and_medians():
     stats = ssg.compute_stats(ssg.flatten(_providers()))
-    assert stats["providers_n"] == 2 and stats["models_n"] == 3
-    assert stats["priced_n"] == 3 and stats["coverage"] == 100.0
-    # glm-flash (0.1) cheapest, glm-big (5.0) priciest
+    assert stats["providers_n"] == 2 and stats["models_n"] == 5
+    assert stats["priced_n"] == 5 and stats["coverage"] == 100.0
+    # zero-priced models never rank: free-tier (0/0) and half-free (0 in)
+    assert stats["zero_priced_n"] == 2
     assert stats["cheapest"][0]["key"] == "zai/glm-flash"
+    assert all(r["input"] > 0 for r in stats["cheapest"])
+    assert all(r["input"] > 0 for r in stats["best_value"])
     assert stats["priciest"][0]["key"] == "zai/glm-big"
     # best value: tool_call + >=128k context -> glm-flash and mimo, not glm-big
     keys = {r["key"] for r in stats["best_value"]}
     assert keys == {"zai/glm-flash", "ogo/mimo"}
-    assert stats["providers"][0]["coverage"] == 100.0
+    assert stats["providers"][0]["coverage"] == 100.0  # ogo first (sorted)
+    # medians exclude zero rates: ogo [0.14] -> 0.14; zai [0.1, 5.0] -> 2.55
+    ogo = next(p for p in stats["providers"] if p["provider"] == "ogo")
+    zai = next(p for p in stats["providers"] if p["provider"] == "zai")
+    assert ogo["median_input"] == 0.14
+    assert zai["median_input"] == 2.55
 
 
 def test_svg_chart_is_deterministic_svg():

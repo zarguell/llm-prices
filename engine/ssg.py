@@ -149,7 +149,11 @@ def _median(vals):
 
 def compute_stats(rows: list[dict]) -> dict:
     priced = [r for r in rows if r["priced"]]
-    with_tools_ctx = [r for r in priced if r["tool_call"]
+    # Zero-priced entries (free tiers / unlisted upstream rates) would wall
+    # the top of every ranking — ranked tables and medians use strictly
+    # positive rates; the zero-priced count stays visible on the stats page.
+    ranked = [r for r in priced if (r["input"] or 0) > 0]
+    with_tools_ctx = [r for r in ranked if r["tool_call"]
                       and (r["context"] or 0) >= 128_000]
     by_provider = {}
     for r in rows:
@@ -159,7 +163,8 @@ def compute_stats(rows: list[dict]) -> dict:
         p["models"] += 1
         if r["priced"]:
             p["priced"] += 1
-            p["inputs"].append(r["input"])
+            if (r["input"] or 0) > 0:  # medians skip zero-priced (free) models
+                p["inputs"].append(r["input"])
     providers = []
     for prov in sorted(by_provider):
         p = by_provider[prov]
@@ -169,18 +174,19 @@ def compute_stats(rows: list[dict]) -> dict:
             "coverage": round(p["priced"] / p["models"] * 100.0, 1) if p["models"] else 0.0,
             "median_input": _median(p["inputs"]),
         })
-    open_m = [r["input"] for r in priced if r["open_weights"]]
-    closed_m = [r["input"] for r in priced if not r["open_weights"]]
+    open_m = [r["input"] for r in ranked if r["open_weights"]]
+    closed_m = [r["input"] for r in ranked if not r["open_weights"]]
     return {
         "providers_n": len(by_provider),
         "models_n": len(rows),
         "priced_n": len(priced),
         "coverage": round(len(priced) / len(rows) * 100.0, 1) if rows else 0.0,
-        "median_input": _median([r["input"] for r in priced]),
-        "cheapest": sorted(priced, key=lambda r: (r["input"], r["output"], r["key"]))[:25],
-        "priciest": sorted(priced, key=lambda r: (-r["input"], -r["output"], r["key"]))[:10],
+        "median_input": _median([r["input"] for r in ranked]),
+        "cheapest": sorted(ranked, key=lambda r: (r["input"], r["output"], r["key"]))[:25],
+        "priciest": sorted(ranked, key=lambda r: (-r["input"], -r["output"], r["key"]))[:10],
         "best_value": sorted(with_tools_ctx,
                              key=lambda r: (r["input"], r["output"], r["key"]))[:25],
+        "zero_priced_n": len(priced) - len(ranked),
         "open_median": _median(open_m),
         "open_n": len(open_m),
         "closed_median": _median(closed_m),

@@ -7,6 +7,8 @@
 
 <section>
   <h2>Cheapest 25 <span class="muted">(input /M)</span></h2>
+  <p class="muted">Excludes {{ stats.zero_priced_n }} zero-priced models
+     (free tiers / unlisted rates).</p>
   <table class="sortable">
     <thead><tr><th>model</th><th data-sort="num">input /M</th><th data-sort="num">output /M</th></tr></thead>
     <tbody>{% for m in stats.cheapest %}

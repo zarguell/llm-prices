@@ -346,6 +346,49 @@ def tracked_series(snapshots: list[tuple[str, dict]], tracked: list[str],
 
 # ── build ──
 
+
+def _load_frontier_cache(data_dir: str, price_by_key: dict) -> dict | None:
+    """Load the frontier enrichment cache and merge prices from the snapshot.
+
+    Returns a dict with tiers/models_by_tier suitable for the template, or
+    None if no cache exists."""
+    import glob
+    try:
+        cache_file = next(iter(glob.glob(os.path.join(data_dir, "frontier-*.json"))))
+    except StopIteration:
+        return None
+    try:
+        with open(cache_file, "r", encoding="utf-8") as f:
+            cache = json.load(f)
+    except Exception:
+        return None
+    enriched = cache.get("enriched")
+    frontier = cache.get("frontier")
+    if not isinstance(enriched, list) or not isinstance(frontier, dict):
+        return None
+    tiers = frontier.get("tiers", {})
+    models_by_tier: dict[str, list] = {}
+    for e in enriched:
+        key = e["key"]
+        tier = e.get("tier", "workhorse")
+        # merge snapshot prices
+        row = price_by_key.get(key, {})
+        merged = {**e}
+        merged.setdefault("price_in", row.get("input"))
+        merged.setdefault("price_out", row.get("output"))
+        merged.setdefault("context", merged.get("context") or row.get("context"))
+        # top benchmarks by ELO
+        bm = e.get("benchmarks") or {}
+        merged["top_benchmarks"] = sorted(bm.items(),
+                                          key=lambda kv: kv[1].get("elo") or 0,
+                                          reverse=True)[:5]
+        models_by_tier.setdefault(tier, []).append(merged)
+    # sort by best ELO within tier
+    for tier in models_by_tier:
+        models_by_tier[tier].sort(key=lambda m: m.get("best_elo") or 0, reverse=True)
+    tier_counts = {t: len(models_by_tier.get(t, [])) for t in tiers}
+    return {"tiers": tiers, "models_by_tier": models_by_tier, "tier_counts": tier_counts}
+
 def _rel_prefix(out_abs: str, root: str) -> str:
     """Root-relative prefix for links ("", "../", "../../", ...) so pages at
     any depth can reference root assets (style.css, nav)."""
@@ -440,6 +483,14 @@ def build(root: str = ROOT, data_dir: str = SNAPSHOTS_DIR,
     # about
     render_page(os.path.join("about", "index.html"), "about.html")
 
+    # frontier page (enriched with OpenRouter benchmarks + HF params)
+    price_by_key = by_key(rows)
+    frontier_data_dir = os.path.dirname(data_dir.rstrip(os.sep))
+    frontier_ctx = _load_frontier_cache(frontier_data_dir, price_by_key)
+    if frontier_ctx:
+        render_page(os.path.join("frontier", "index.html"), "frontier.html",
+                    **frontier_ctx)
+
     # machine-readable current prices
     _write(os.path.join(root, "data", "latest.json"),
            json.dumps({"as_of": cur_date, "source": "models.dev",
@@ -453,7 +504,7 @@ def build(root: str = ROOT, data_dir: str = SNAPSHOTS_DIR,
     _write(os.path.join(root, "robots.txt"),
            env.get_template("robots.txt").render(base_url=BASE_URL),
            manifest, root)
-    urls = ["", "prices/", "providers/", "trends/", "changes/", "stats/", "about/"]
+    urls = ["", "prices/", "frontier/", "providers/", "trends/", "changes/", "stats/", "about/"]
     for prov in sorted(priced_by_provider):
         urls.append(f"prices/{prov}/")
     _write(os.path.join(root, "sitemap.xml"),

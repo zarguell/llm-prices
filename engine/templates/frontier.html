@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+{% block title %}Frontier models — {{ site_name }}{% endblock %}
+{% block body %}
+<h1>Frontier models</h1>
+<p class="tagline">A curated view of the most capable models across tiers — hand-picked,
+   enriched with HuggingFace parameter counts and OpenRouter multi-arena ELO benchmarks.
+   Updated weekly from {{ snapshots_n }} snapshots.</p>
+
+<div class="tiles" style="margin-top:18px">
+  {% for tid, t in tiers.items() %}
+  <div class="tile" style="border-left:4px solid {{ t.color }}">
+    <span class="n" style="color:{{ t.color }}">{{ tier_counts[tid] }}</span>
+    <span class="l">{{ t.label }}: {{ t.description }}</span>
+  </div>
+  {% endfor %}
+</div>
+
+{% for tid, t in tiers.items() %}
+<section style="margin-top:28px">
+  <h2 style="color:{{ t.color }}">{{ t.label }}</h2>
+  <p class="muted">{{ t.description }}</p>
+  <table class="sortable">
+    <thead><tr>
+      <th>model</th>
+      <th data-sort="num">params</th>
+      <th>modality</th>
+      <th data-sort="num">context</th>
+      <th data-sort="num">input /M</th>
+      <th data-sort="num">output /M</th>
+      <th data-sort="num">best ELO</th>
+      <th>benchmarks</th>
+      <th>knowledge</th>
+    </tr></thead>
+    <tbody>
+    {% for m in models_by_tier[tid] %}
+    <tr>
+      <td>
+        <strong>{{ m.model_id }}</strong>
+        <code class="mid">{{ m.provider }}</code>
+      </td>
+      <td data-v="{{ m.params_b or 0 }}">{{ '%.1fB'|format(m.params_b) if m.params_b else '—' }}</td>
+      <td>{{ m.arch_modality or '—' }}</td>
+      <td data-v="{{ m.context or 0 }}">{{ '{:,}'.format(m.context) if m.context else '—' }}</td>
+      <td data-v="{{ m.price_in or 0 }}">{{ '$%.2f'|format(m.price_in) if m.price_in is not none else '—' }}</td>
+      <td data-v="{{ m.price_out or 0 }}">{{ '$%.2f'|format(m.price_out) if m.price_out is not none else '—' }}</td>
+      <td data-v="{{ m.best_elo or 0 }}">
+        {% if m.best_elo %}<span class="elo">{{ '%.0f'|format(m.best_elo) }}</span>{% else %}—{% endif %}
+      </td>
+      <td>
+        {% if m.top_benchmarks %}
+          {% for cat, b in m.top_benchmarks[:3] %}
+            <span class="bench" title="{{ cat }}">#{{ b.rank }} {{ b.elo|int }}</span>
+          {% endfor %}
+        {% else %}—{% endif %}
+      </td>
+      <td>{{ m.knowledge_cutoff or '—' }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</section>
+{% endfor %}
+
+<section style="margin-top:28px">
+  <h2>How this works</h2>
+  <ul>
+    <li><strong>Tiers are editorial</strong> — hand-curated from the models listed
+        in <code>engine/frontier.json</code>. Model quality is ultimately a judgment call.</li>
+    <li><strong>Parameter counts</strong> come from HuggingFace
+        (<code>safetensors.parameters.total</code>) for open-weight models;
+        closed models may have hand-specified values or show "—".</li>
+    <li><strong>Benchmarks</strong> come from OpenRouter's multi-arena ELO data
+        (human preference votes across agents, code, 3D, and other categories).
+        "Best ELO" is the highest across all available categories.</li>
+    <li><strong>Prices</strong> come from the latest models.dev snapshot. For open models
+        these are typically a mid-tier provider's rates — actual prices vary by provider.</li>
+  </ul>
+</section>
+{% endblock %}

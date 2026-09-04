@@ -137,6 +137,28 @@ def test_build_renders_expected_site():
         assert "zai/glm-new" in keys and "zai/glm-big" not in keys
 
 
+def test_build_link_prefixes_match_depth():
+    """The `r` prefix must be depth-correct: "" at root, ../ one level down,
+    ../../ two levels down. (Regression: pages rendered with the template
+    name as prefix -> href="index.htmlstyle.css" on Pages.)"""
+    with tempfile.TemporaryDirectory() as tmp:
+        data_dir = os.path.join(tmp, "data", "snapshots")
+        _write_snaps(data_dir)
+        out_root = os.path.join(tmp, "root")
+        os.makedirs(out_root)
+        ssg.build(root=out_root, data_dir=data_dir,
+                  tracked=["zai/glm-flash"])
+        idx = open(os.path.join(out_root, "index.html")).read()
+        assert 'href="style.css"' in idx
+        assert 'href="prices/index.html"' in idx
+        ch = open(os.path.join(out_root, "changes", "index.html")).read()
+        assert 'href="../style.css"' in ch
+        assert 'href="../prices/index.html"' in ch
+        zai = open(os.path.join(out_root, "prices", "zai", "index.html")).read()
+        assert 'href="../../style.css"' in zai
+        assert "index.htmlstyle" not in idx + ch + zai
+
+
 def test_build_single_snapshot_baseline():
     with tempfile.TemporaryDirectory() as tmp:
         data_dir = os.path.join(tmp, "data", "snapshots")

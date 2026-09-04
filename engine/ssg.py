@@ -284,9 +284,12 @@ def tracked_series(snapshots: list[tuple[str, dict]], tracked: list[str],
 
 # ── build ──
 
-def _rel(out_path: str) -> str:
-    depth = out_path.count(os.sep) - ROOT.count(os.sep)
-    return "../" * depth
+def _rel_prefix(out_abs: str, root: str) -> str:
+    """Root-relative prefix for links ("", "../", "../../", ...) so pages at
+    any depth can reference root assets (style.css, nav)."""
+    rel = os.path.relpath(os.path.abspath(root),
+                          os.path.dirname(os.path.abspath(out_abs)))
+    return "" if rel == "." else rel.replace(os.sep, "/") + "/"
 
 
 def _write(path: str, content: str, manifest: list[str], root: str = ROOT) -> None:
@@ -319,62 +322,61 @@ def build(root: str = ROOT, data_dir: str = SNAPSHOTS_DIR,
     providers_sorted = stats["providers"]
     manifest: list[str] = []
 
-    def ctx(r, **kw):
-        kw.update(r=r, site_name=SITE_NAME, base_url=BASE_URL,
-                  data_date=cur_date, generated=generated,
-                  stats=stats, snapshots_n=len(snapshots))
-        return env.get_template(kw.pop("template")).render(**kw)
+    def render_page(rel_path: str, template: str, **kw) -> None:
+        """Render one template into rel_path with a depth-correct `r` prefix."""
+        out_abs = os.path.join(root, rel_path)
+        kw["r"] = _rel_prefix(out_abs, root)
+        kw.setdefault("site_name", SITE_NAME)
+        kw.setdefault("base_url", BASE_URL)
+        kw.setdefault("data_date", cur_date)
+        kw.setdefault("generated", generated)
+        kw.setdefault("stats", stats)
+        kw.setdefault("snapshots_n", len(snapshots))
+        content = env.get_template(template).render(**kw)
+        _write(out_abs, content, manifest, root)
 
     # index
-    _write(os.path.join(root, "index.html"),
-           ctx("index.html", template="index.html", rows=rows, diff=d,
-               cheapest=stats["cheapest"][:8]), manifest, root)
+    render_page("index.html", "index.html", rows=rows, diff=d,
+                cheapest=stats["cheapest"][:8])
 
     # prices: provider index + per-provider tables
     priced_by_provider = {}
     for row in rows:
         priced_by_provider.setdefault(row["provider"], []).append(row)
-    _write(os.path.join(root, "prices", "index.html"),
-           ctx("prices_index.html", template="prices_index.html",
-               providers=providers_sorted), manifest, root)
+    render_page(os.path.join("prices", "index.html"), "prices_index.html",
+                providers=providers_sorted)
     for prov in sorted(priced_by_provider):
         prov_rows = sorted(priced_by_provider[prov],
                            key=lambda r: (not r["priced"], r["input"] or 9e9,
                                           r["output"] or 9e9, r["id"]))
         pname = next((p["name"] for p in providers_sorted
                       if p["provider"] == prov), prov)
-        _write(os.path.join(root, "prices", prov, "index.html"),
-               ctx("provider.html", template="provider.html", rows=prov_rows,
-                   provider=prov, provider_name=pname), manifest, root)
+        render_page(os.path.join("prices", prov, "index.html"),
+                    "provider.html", rows=prov_rows,
+                    provider=prov, provider_name=pname)
 
     # providers analytics
-    _write(os.path.join(root, "providers", "index.html"),
-           ctx("providers.html", template="providers.html"), manifest, root)
+    render_page(os.path.join("providers", "index.html"), "providers.html")
 
     # trends
     in_dates, in_series = tracked_series(snapshots, tracked, "input")
     out_dates, out_series = tracked_series(snapshots, tracked, "output")
-    chart_in = svg_line_chart(in_dates, in_series) if in_series else None
-    chart_out = svg_line_chart(out_dates, out_series) if out_series else None
-    _write(os.path.join(root, "trends", "index.html"),
-           ctx("trends.html", template="trends.html", tracked=tracked,
-               chart_in_svg=svg_line_chart(in_dates, in_series) if in_series else "",
-               chart_out_svg=svg_line_chart(out_dates, out_series) if out_series else "",
-               dates=in_dates), manifest, root)
+    render_page(os.path.join("trends", "index.html"), "trends.html",
+                tracked=tracked,
+                chart_in_svg=svg_line_chart(in_dates, in_series) if in_series else "",
+                chart_out_svg=svg_line_chart(out_dates, out_series) if out_series else "",
+                dates=in_dates)
 
     # changes
-    _write(os.path.join(root, "changes", "index.html"),
-           ctx("changes.html", template="changes.html", diff=d,
-               prev_date=snapshots[-2][0] if len(snapshots) > 1 else None,
-               cur_rows=rows, prev_rows=prev_rows), manifest, root)
+    render_page(os.path.join("changes", "index.html"), "changes.html", diff=d,
+                prev_date=snapshots[-2][0] if len(snapshots) > 1 else None,
+                cur_rows=rows, prev_rows=prev_rows)
 
     # stats
-    _write(os.path.join(root, "stats", "index.html"),
-           ctx("stats.html", template="stats.html"), manifest, root)
+    render_page(os.path.join("stats", "index.html"), "stats.html")
 
     # about
-    _write(os.path.join(root, "about", "index.html"),
-           ctx("about.html", template="about.html"), manifest, root)
+    render_page(os.path.join("about", "index.html"), "about.html")
 
     # machine-readable current prices
     _write(os.path.join(root, "data", "latest.json"),
@@ -385,10 +387,10 @@ def build(root: str = ROOT, data_dir: str = SNAPSHOTS_DIR,
     # static-ish pages
     _write(os.path.join(root, "style.css"),
            env.get_template("style.css").render(), manifest, root)
-    _write(os.path.join(root, "404.html"),
-           ctx("404.html", template="404.html"), manifest, root)
+    render_page("404.html", "404.html")
     _write(os.path.join(root, "robots.txt"),
-           env.get_template("robots.txt").render(base_url=BASE_URL), manifest, root)
+           env.get_template("robots.txt").render(base_url=BASE_URL),
+           manifest, root)
     urls = ["", "prices/", "providers/", "trends/", "changes/", "stats/", "about/"]
     for prov in sorted(priced_by_provider):
         urls.append(f"prices/{prov}/")

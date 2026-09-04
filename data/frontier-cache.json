@@ -1,74 +1,18 @@
 {
  "enriched": [
   {
-   "arch_modality": "text+image+file->text",
-   "benchmark_count": 8,
-   "benchmarks": {
-    "design_arena/3d": {
-     "elo": 1094,
-     "rank": 89,
-     "win_rate": 41.3
-    },
-    "design_arena/asciiart": {
-     "elo": 1166,
-     "rank": 37,
-     "win_rate": 49
-    },
-    "design_arena/codecategories": {
-     "elo": 1187,
-     "rank": 60,
-     "win_rate": 54.5
-    },
-    "design_arena/dataviz": {
-     "elo": 1241,
-     "rank": 36,
-     "win_rate": 60.5
-    },
-    "design_arena/gamedev": {
-     "elo": 1221,
-     "rank": 43,
-     "win_rate": 59.3
-    },
-    "design_arena/svg": {
-     "elo": 1227,
-     "rank": 21,
-     "win_rate": 64.1
-    },
-    "design_arena/uicomponent": {
-     "elo": 1202,
-     "rank": 49,
-     "win_rate": 57.4
-    },
-    "design_arena/website": {
-     "elo": 1200,
-     "rank": 60,
-     "win_rate": 53.7
-    }
-   },
-   "best_elo": 1241,
-   "context": 400000,
-   "hf_id": null,
-   "key": "openai/gpt-5",
-   "knowledge_cutoff": "2024-09-30",
-   "model_id": "gpt-5",
-   "or_id": "openai/gpt-5",
-   "params_b": null,
-   "provider": "openai",
-   "tier": "frontier"
-  },
-  {
    "arch_modality": null,
    "benchmark_count": 0,
    "benchmarks": {},
    "best_elo": null,
    "context": null,
    "hf_id": null,
-   "key": "anthropic/claude-opus-4-5",
+   "key": "openai/gpt-5.6",
    "knowledge_cutoff": null,
-   "model_id": "claude-opus-4-5",
-   "or_id": "anthropic/claude-opus-4-5",
+   "model_id": "gpt-5.6",
+   "or_id": "openai/gpt-5.6",
    "params_b": null,
-   "provider": "anthropic",
+   "provider": "openai",
    "tier": "frontier"
   },
   {
@@ -148,6 +92,47 @@
    "knowledge_cutoff": null,
    "model_id": "claude-opus-5",
    "or_id": "anthropic/claude-opus-5",
+   "params_b": null,
+   "provider": "anthropic",
+   "tier": "frontier"
+  },
+  {
+   "arch_modality": "text+image+file->text",
+   "benchmark_count": 5,
+   "benchmarks": {
+    "design_arena/3d": {
+     "elo": 1405,
+     "rank": 2,
+     "win_rate": 67.3
+    },
+    "design_arena/codecategories": {
+     "elo": 1343,
+     "rank": 2,
+     "win_rate": 58.4
+    },
+    "design_arena/dataviz": {
+     "elo": 1375,
+     "rank": 1,
+     "win_rate": 64.4
+    },
+    "design_arena/uicomponent": {
+     "elo": 1357,
+     "rank": 3,
+     "win_rate": 60.5
+    },
+    "design_arena/website": {
+     "elo": 1327,
+     "rank": 3,
+     "win_rate": 56.4
+    }
+   },
+   "best_elo": 1405,
+   "context": 1000000,
+   "hf_id": null,
+   "key": "anthropic/claude-fable-5-1",
+   "knowledge_cutoff": null,
+   "model_id": "claude-fable-5-1",
+   "or_id": "anthropic/claude-fable-5.1",
    "params_b": null,
    "provider": "anthropic",
    "tier": "frontier"
@@ -271,6 +256,21 @@
   },
   {
    "arch_modality": "text+image+file->text",
+   "benchmark_count": 0,
+   "benchmarks": {},
+   "best_elo": null,
+   "context": 1050000,
+   "hf_id": null,
+   "key": "openai/gpt-5.6-luna",
+   "knowledge_cutoff": "2026-02-16",
+   "model_id": "gpt-5.6-luna",
+   "or_id": "openai/gpt-5.6-luna",
+   "params_b": null,
+   "provider": "openai",
+   "tier": "efficient"
+  },
+  {
+   "arch_modality": "text+image+file->text",
    "benchmark_count": 6,
    "benchmarks": {
     "design_arena/3d": {
@@ -317,127 +317,122 @@
   },
   {
    "arch_modality": "text+image+file->text",
-   "benchmark_count": 6,
+   "benchmark_count": 16,
    "benchmarks": {
     "design_arena/3d": {
-     "elo": 875,
-     "rank": 113,
-     "win_rate": 30.5
+     "elo": 1296,
+     "rank": 18,
+     "win_rate": 55.1
+    },
+    "design_arena/agenticgamedev": {
+     "elo": 1222,
+     "rank": 8,
+     "win_rate": 51.5
+    },
+    "design_arena/androidnative": {
+     "elo": 1249,
+     "rank": 9,
+     "win_rate": 55.1
+    },
+    "design_arena/asciiart": {
+     "elo": 1235,
+     "rank": 16,
+     "win_rate": 52.7
     },
     "design_arena/codecategories": {
-     "elo": 1013,
-     "rank": 110,
-     "win_rate": 47.5
+     "elo": 1295,
+     "rank": 17,
+     "win_rate": 54
     },
     "design_arena/dataviz": {
-     "elo": 1052,
-     "rank": 98,
-     "win_rate": 49.2
+     "elo": 1262,
+     "rank": 25,
+     "win_rate": 52.5
+    },
+    "design_arena/fullstack": {
+     "elo": 1271,
+     "rank": 9,
+     "win_rate": 56.5
     },
     "design_arena/gamedev": {
-     "elo": 1106,
-     "rank": 87,
-     "win_rate": 58.5
+     "elo": 1328,
+     "rank": 9,
+     "win_rate": 55.1
+    },
+    "design_arena/godotgamedev": {
+     "elo": 1268,
+     "rank": 4,
+     "win_rate": 60.4
+    },
+    "design_arena/htmlslides": {
+     "elo": 1228,
+     "rank": 4,
+     "win_rate": 53.9
+    },
+    "design_arena/mobileapps": {
+     "elo": 1227,
+     "rank": 13,
+     "win_rate": 50.8
+    },
+    "design_arena/python-pptxslides": {
+     "elo": 1246,
+     "rank": 9,
+     "win_rate": 52.2
+    },
+    "design_arena/svg": {
+     "elo": 1226,
+     "rank": 22,
+     "win_rate": 52.1
     },
     "design_arena/uicomponent": {
-     "elo": 983,
-     "rank": 104,
-     "win_rate": 45.4
+     "elo": 1302,
+     "rank": 14,
+     "win_rate": 55.1
+    },
+    "design_arena/webapps": {
+     "elo": 1277,
+     "rank": 6,
+     "win_rate": 56.3
     },
     "design_arena/website": {
-     "elo": 1013,
-     "rank": 114,
-     "win_rate": 47.8
+     "elo": 1292,
+     "rank": 17,
+     "win_rate": 53.8
     }
    },
-   "best_elo": 1106,
-   "context": 1047576,
+   "best_elo": 1328,
+   "context": 1000000,
    "hf_id": null,
-   "key": "openai/gpt-4.1-mini",
-   "knowledge_cutoff": "2024-06-30",
-   "model_id": "gpt-4.1-mini",
-   "or_id": "openai/gpt-4.1-mini",
-   "params_b": null,
-   "provider": "openai",
-   "tier": "efficient"
-  },
-  {
-   "arch_modality": null,
-   "benchmark_count": 0,
-   "benchmarks": {},
-   "best_elo": null,
-   "context": null,
-   "hf_id": null,
-   "key": "anthropic/claude-sonnet-4-5",
+   "key": "anthropic/claude-sonnet-5",
    "knowledge_cutoff": null,
-   "model_id": "claude-sonnet-4-5",
-   "or_id": "anthropic/claude-sonnet-4-5",
-   "params_b": null,
-   "provider": "anthropic",
-   "tier": "efficient"
-  },
-  {
-   "arch_modality": null,
-   "benchmark_count": 0,
-   "benchmarks": {},
-   "best_elo": null,
-   "context": null,
-   "hf_id": null,
-   "key": "anthropic/claude-haiku-4-5",
-   "knowledge_cutoff": null,
-   "model_id": "claude-haiku-4-5",
-   "or_id": "anthropic/claude-haiku-4-5",
+   "model_id": "claude-sonnet-5",
+   "or_id": "anthropic/claude-sonnet-5",
    "params_b": null,
    "provider": "anthropic",
    "tier": "efficient"
   },
   {
    "arch_modality": "text+image+file+audio+video->text",
-   "benchmark_count": 7,
+   "benchmark_count": 2,
    "benchmarks": {
     "design_arena/3d": {
-     "elo": 1110,
-     "rank": 87,
-     "win_rate": 47.4
-    },
-    "design_arena/codecategories": {
-     "elo": 1123,
-     "rank": 87,
-     "win_rate": 46.9
-    },
-    "design_arena/dataviz": {
-     "elo": 1154,
-     "rank": 73,
-     "win_rate": 49.1
-    },
-    "design_arena/gamedev": {
-     "elo": 1101,
-     "rank": 88,
-     "win_rate": 44.3
-    },
-    "design_arena/svg": {
-     "elo": 1058,
-     "rank": 71,
-     "win_rate": 43.1
-    },
-    "design_arena/uicomponent": {
-     "elo": 1115,
-     "rank": 82,
-     "win_rate": 48.9
+     "elo": 1340,
+     "rank": 7,
+     "win_rate": 58.2
     },
     "design_arena/website": {
-     "elo": 1130,
-     "rank": 89,
-     "win_rate": 47.1
+     "elo": 1302,
+     "rank": 13,
+     "win_rate": 54.6
     }
    },
-   "best_elo": 1154,
+   "best_elo": 1340,
    "context": 1048576,
    "hf_id": null,
-   "key": "google/gemini-2.5-flash",
-   "knowledge_cutoff": "2025-01-31",
-   "model_id": "gemini-2.5-flash",
-   "or_id": "google/gemini-2.5-flash",
+   "key": "google/gemini-3.8-flash",
+   "knowledge_cutoff": null,
+   "model_id": "gemini-3.8-flash",
+   "or_id": "google/gemini-3.8-flash",
    "params_b": null,
    "provider": "google",
    "tier": "efficient"
@@ -505,10 +500,10 @@
    "best_elo": null,
    "context": null,
    "hf_id": null,
-   "key": "zai/glm-5",
+   "key": "zai/glm-5.3",
    "knowledge_cutoff": null,
-   "model_id": "glm-5",
-   "or_id": "zai/glm-5",
+   "model_id": "glm-5.3",
+   "or_id": "zai/glm-5.3",
    "params_b": null,
    "provider": "zai",
    "tier": "efficient"
@@ -575,21 +570,6 @@
    "tier": "workhorse"
   },
   {
-   "arch_modality": "text+image+file->text",
-   "benchmark_count": 0,
-   "benchmarks": {},
-   "best_elo": null,
-   "context": 128000,
-   "hf_id": null,
-   "key": "openai/gpt-4o-mini",
-   "knowledge_cutoff": "2023-10-31",
-   "model_id": "gpt-4o-mini",
-   "or_id": "openai/gpt-4o-mini",
-   "params_b": null,
-   "provider": "openai",
-   "tier": "workhorse"
-  },
-  {
    "arch_modality": "text+image->text",
    "benchmark_count": 5,
    "benchmarks": {
@@ -622,12 +602,58 @@
    "best_elo": 913,
    "context": 1310720,
    "hf_id": "meta-llama/Llama-4-Scout-17B-16E-Instruct",
-   "key": "meta/llama-4-scout",
+   "key": "meta-llama/llama-4-scout",
    "knowledge_cutoff": "2024-08-31",
    "model_id": "llama-4-scout",
    "or_id": "meta-llama/llama-4-scout",
    "params_b": 17.0,
-   "provider": "meta",
+   "provider": "meta-llama",
+   "tier": "workhorse"
+  },
+  {
+   "arch_modality": "text+image->text",
+   "benchmark_count": 6,
+   "benchmarks": {
+    "design_arena/3d": {
+     "elo": 939,
+     "rank": 108,
+     "win_rate": 40.2
+    },
+    "design_arena/codecategories": {
+     "elo": 899,
+     "rank": 119,
+     "win_rate": 35.8
+    },
+    "design_arena/dataviz": {
+     "elo": 900,
+     "rank": 116,
+     "win_rate": 38.4
+    },
+    "design_arena/gamedev": {
+     "elo": 873,
+     "rank": 118,
+     "win_rate": 33.7
+    },
+    "design_arena/uicomponent": {
+     "elo": 921,
+     "rank": 112,
+     "win_rate": 40.8
+    },
+    "design_arena/website": {
+     "elo": 886,
+     "rank": 124,
+     "win_rate": 34.4
+    }
+   },
+   "best_elo": 939,
+   "context": 1048576,
+   "hf_id": "meta-llama/Llama-4-Maverick-17B-128E-Instruct",
+   "key": "meta-llama/llama-4-maverick",
+   "knowledge_cutoff": "2024-08-31",
+   "model_id": "llama-4-maverick",
+   "or_id": "meta-llama/llama-4-maverick",
+   "params_b": 17.0,
+   "provider": "meta-llama",
    "tier": "workhorse"
   },
   {
@@ -674,37 +700,15 @@
    "params_b": 8.0,
    "provider": "openrouter",
    "tier": "workhorse"
-  },
-  {
-   "arch_modality": null,
-   "benchmark_count": 0,
-   "benchmarks": {},
-   "best_elo": null,
-   "context": null,
-   "hf_id": null,
-   "key": "zai/glm-4.7",
-   "knowledge_cutoff": null,
-   "model_id": "glm-4.7",
-   "or_id": "zai/glm-4.7",
-   "params_b": null,
-   "provider": "zai",
-   "tier": "workhorse"
   }
  ],
- "fetched": "2026-09-04T11:39:55.744500+00:00",
+ "fetched": "2026-09-04T11:55:11.440273+00:00",
  "frontier": {
   "models": [
    {
     "hf_id": null,
-    "key": "openai/gpt-5",
-    "or_id": "openai/gpt-5",
-    "params_b": null,
-    "tier": "frontier"
-   },
-   {
-    "hf_id": null,
-    "key": "anthropic/claude-opus-4-5",
-    "or_id": "anthropic/claude-opus-4-5",
+    "key": "openai/gpt-5.6",
+    "or_id": "openai/gpt-5.6",
     "params_b": null,
     "tier": "frontier"
    },
@@ -712,6 +716,13 @@
     "hf_id": null,
     "key": "anthropic/claude-opus-5",
     "or_id": "anthropic/claude-opus-5",
+    "params_b": null,
+    "tier": "frontier"
+   },
+   {
+    "hf_id": null,
+    "key": "anthropic/claude-fable-5-1",
+    "or_id": "anthropic/claude-fable-5.1",
     "params_b": null,
     "tier": "frontier"
    },
@@ -731,6 +742,13 @@
    },
    {
     "hf_id": null,
+    "key": "openai/gpt-5.6-luna",
+    "or_id": "openai/gpt-5.6-luna",
+    "params_b": null,
+    "tier": "efficient"
+   },
+   {
+    "hf_id": null,
     "key": "openai/gpt-4.1",
     "or_id": "openai/gpt-4.1",
     "params_b": null,
@@ -738,29 +756,15 @@
    },
    {
     "hf_id": null,
-    "key": "openai/gpt-4.1-mini",
-    "or_id": "openai/gpt-4.1-mini",
+    "key": "anthropic/claude-sonnet-5",
+    "or_id": "anthropic/claude-sonnet-5",
     "params_b": null,
     "tier": "efficient"
    },
    {
     "hf_id": null,
-    "key": "anthropic/claude-sonnet-4-5",
-    "or_id": "anthropic/claude-sonnet-4-5",
-    "params_b": null,
-    "tier": "efficient"
-   },
-   {
-    "hf_id": null,
-    "key": "anthropic/claude-haiku-4-5",
-    "or_id": "anthropic/claude-haiku-4-5",
-    "params_b": null,
-    "tier": "efficient"
-   },
-   {
-    "hf_id": null,
-    "key": "google/gemini-2.5-flash",
-    "or_id": "google/gemini-2.5-flash",
+    "key": "google/gemini-3.8-flash",
+    "or_id": "google/gemini-3.8-flash",
     "params_b": null,
     "tier": "efficient"
    },
@@ -773,8 +777,8 @@
    },
    {
     "hf_id": null,
-    "key": "zai/glm-5",
-    "or_id": "zai/glm-5",
+    "key": "zai/glm-5.3",
+    "or_id": "zai/glm-5.3",
     "params_b": null,
     "tier": "efficient"
    },
@@ -793,16 +797,16 @@
     "tier": "workhorse"
    },
    {
-    "hf_id": null,
-    "key": "openai/gpt-4o-mini",
-    "or_id": "openai/gpt-4o-mini",
-    "params_b": null,
+    "hf_id": "meta-llama/Llama-4-Scout-17B-16E-Instruct",
+    "key": "meta-llama/llama-4-scout",
+    "or_id": "meta-llama/llama-4-scout",
+    "params_b": 17.0,
     "tier": "workhorse"
    },
    {
-    "hf_id": "meta-llama/Llama-4-Scout-17B-16E-Instruct",
-    "key": "meta/llama-4-scout",
-    "or_id": "meta-llama/llama-4-scout",
+    "hf_id": "meta-llama/Llama-4-Maverick-17B-128E-Instruct",
+    "key": "meta-llama/llama-4-maverick",
+    "or_id": "meta-llama/llama-4-maverick",
     "params_b": 17.0,
     "tier": "workhorse"
    },
@@ -826,29 +830,22 @@
     "or_id": "qwen/qwen3-8b",
     "params_b": 8.0,
     "tier": "workhorse"
-   },
-   {
-    "hf_id": null,
-    "key": "zai/glm-4.7",
-    "or_id": "zai/glm-4.7",
-    "params_b": null,
-    "tier": "workhorse"
    }
   ],
   "tiers": {
    "efficient": {
     "color": "#7C9885",
-    "description": "Capable models at a fraction of frontier cost. Tool use, reasoning, large context.",
+    "description": "Latest-gen capable models at a fraction of frontier cost. Tool use, reasoning, large context.",
     "label": "Efficient"
    },
    "frontier": {
     "color": "#D97757",
-    "description": "State-of-the-art reasoning and capability. Higher cost, highest quality.",
+    "description": "Latest generation, highest capability. The models pushing the state of the art.",
     "label": "Frontier"
    },
    "workhorse": {
     "color": "#5B8DB8",
-    "description": "Ubiquitous mid-range models balancing cost and capability.",
+    "description": "Ubiquitous open and mid-range models. Widely deployed, battle-tested.",
     "label": "Workhorse"
    }
   }
@@ -887,6 +884,13 @@
     "LlamaForCausalLM"
    ],
    "license": "llama3.3",
+   "parameters_b": null
+  },
+  "meta-llama/Llama-4-Maverick-17B-128E-Instruct": {
+   "architecture": [
+    "Llama4ForConditionalGeneration"
+   ],
+   "license": "other",
    "parameters_b": null
   },
   "meta-llama/Llama-4-Scout-17B-16E-Instruct": {

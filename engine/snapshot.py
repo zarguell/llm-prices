@@ -17,6 +17,7 @@ Usage: python3 snapshot.py [--from-file FILE] [--url URL] [--data-dir DIR]
 import argparse
 import glob
 import gzip
+import gzip
 import json
 import os
 import urllib.request
@@ -30,9 +31,13 @@ DEFAULT_DATA_DIR = os.path.join(os.path.dirname(ENGINE), "data", "snapshots")
 
 
 def fetch(url: str = SOURCE_URL) -> dict:
-    req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
+    req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT,
+                                                "Accept-Encoding": "gzip"})
     with urllib.request.urlopen(req, timeout=60) as r:
-        data = json.loads(r.read().decode("utf-8"))
+        raw = r.read()
+    if raw[:2] == b"\x1f\x8b":  # server honored gzip (4.5MB -> ~370KB)
+        raw = gzip.decompress(raw)
+    data = json.loads(raw.decode("utf-8"))
     if not isinstance(data, dict):
         raise ValueError("unexpected models.dev payload (not a dict)")
     return data

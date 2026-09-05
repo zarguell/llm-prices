@@ -4,18 +4,24 @@ Notes for anyone (AI agent or human) changing this repo. Read this first.
 
 ## What this is
 
-A weekly archive of LLM API prices from models.dev, rendered into a static
+A daily-gated archive of LLM API prices from models.dev, rendered into a static
 GitHub Pages site. Deterministic build, no LLM involved anywhere, and **no
 usage telemetry published** — public catalog data only.
 
 ## Layout
 
 - `data/snapshots/YYYY-MM-DD.json.gz`: the store. One immutable bundle per
-  week (gzip JSON: `{fetched, source, providers}` where `providers` is the
-  raw models.dev payload). Date-level timestamps; a same-day re-snapshot
-  replaces the file in place rather than forking dates.
+  full run (gzip JSON: `{fetched, source, providers}` where `providers` is the
+  raw models.dev payload). Full runs happen when the daily fingerprint moves
+  (new/removed model key or release-date change) or 7 days pass without one.
+  Date-level timestamps; a same-day re-snapshot replaces the file in place
+  rather than forking dates.
 - `engine/snapshot.py`: fetch/write a snapshot. `--from-file` seeds from a
-  local api.json (used by tests and for bootstrapping).
+  local api.json (used by tests and for bootstrapping). `fetch()` sends
+  `Accept-Encoding: gzip` (4.5MB → ~370KB).
+- `engine/fingerprint.py`: print the canonical `{model_key: release_date}`
+  fingerprint to stdout (zero writes). The cronman job diffs it against state
+  to decide full runs; contract tests in `engine/test_fingerprint.py`.
 - `engine/ssg.py`: all build logic. **All markup lives in
   `engine/templates/`**; keep this file logic-only.
 - `engine/tracked.json`: `provider/model` ids plotted on the Trends page

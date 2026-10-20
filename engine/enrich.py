@@ -12,6 +12,7 @@ Usage: python3 engine/enrich.py [--data-dir DIR] [--dry-run]
 The cache is consumed by ssg.py at build time — no network at build.
 """
 import argparse
+import hashlib
 import json
 import os
 import urllib.request
@@ -42,6 +43,21 @@ def _fetch_json(url, user_agent=None):
 
 def _cache_path(data_dir):
     return os.path.join(data_dir, CACHE_FILE)
+
+
+def _frontier_fingerprint(frontier):
+    """Stable hash of the frontier list, so enrich can tell whether the
+    cached enrichment still matches the current frontier.json."""
+    return hashlib.sha256(
+        json.dumps(frontier, sort_keys=True).encode("utf-8")).hexdigest()
+
+
+def _today_or_archive(data_dir, today=None):
+    """Today's archived OpenRouter response (written by
+    classify_frontier.py), or None when the live API must be used."""
+    day = today or datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    path = os.path.join(data_dir, "or-cache", f"{day}.json")
+    return path if os.path.exists(path) else None
 
 
 def _read_cache(data_dir):
@@ -164,29 +180,50 @@ def main(argv=None) -> int:
 
     now = _now()
     cache = _read_cache(args.data_dir) or {}
-    cache_fresh = False
-    if cache.get("fetched"):
-        try:
-            age = (now - datetime.fromisoformat(cache["fetched"])).total_seconds()
-            cache_fresh = age < TTL_HOURS * 3600
-        except Exception:
-            pass
-
-    if cache_fresh:
-        print(f"ENRICH: cache fresh (fetched {cache['fetched']}) — skipping")
-        return 0
 
     with open(FRONTIER_FILE, "r", encoding="utf-8") as f:
         frontier = json.load(f)
 
+    cache_fresh = False
+    if cache.get("fetched"):
+        try:
+            age = (now - datetime.fromisoformat(cache["fetched"])).total_seconds()
+            # A fresh TTL is not enough: classify may have rewritten
+            # frontier.json since (that file is now committed daily, so a
+            # stale cache would pin the published page to yesterday's list).
+            same_frontier = (cache.get("frontier_fingerprint") ==
+                             _frontier_fingerprint(frontier))
+            cache_fresh = age < TTL_HOURS * 3600 and same_frontier
+        except Exception:
+            pass
+
     if args.dry_run:
-        print(f"DRY RUN: would fetch OpenRouter ({len(frontier['models'])} models to enrich)")
+        print(f"DRY RUN: would enrich {len(frontier['models'])} models "
+              f"(cache fresh: {cache_fresh})")
         for e in frontier["models"]:
             print(f"  {e['key']:45s} tier={e['tier']}")
         return 0
 
-    print("ENRICH: fetching OpenRouter model list...")
-    or_index = fetch_openrouter_index()
+    if cache_fresh:
+        print(f"ENRICH: cache fresh (fetched {cache['fetched']}) "
+              "and frontier unchanged — skipping")
+        return 0
+
+    # Prefer today's archived OpenRouter response (written by classify) over
+    # a second live fetch: same inputs → same enrichment, and no network
+    # when the classifier already archived. Falls back to live on misses
+    # (e.g. backfills) — the TTL + fingerprint gate above still applies.
+    or_index = None
+    archived = _today_or_archive(args.data_dir)
+    if archived:
+        print(f"ENRICH: using archived OpenRouter response {archived}")
+        with open(archived, "r", encoding="utf-8") as f:
+            arch_data = json.load(f)
+        or_index = {m["id"]: m for m in arch_data.get("data", [])
+                    if isinstance(m, dict) and "id" in m}
+    if or_index is None:
+        print("ENRICH: fetching OpenRouter model list...")
+        or_index = fetch_openrouter_index()
     print(f"  OpenRouter: {len(or_index)} models loaded")
 
     hf_ids = [e.get("hf_id") for e in frontier["models"] if e.get("hf_id")]
@@ -209,6 +246,7 @@ def main(argv=None) -> int:
     output = {
         "fetched": now.isoformat(),
         "frontier": frontier,
+        "frontier_fingerprint": _frontier_fingerprint(frontier),
         "enriched": enriched,
         "hf": hf_cache,
         "or_model_count": len(or_index),

@@ -14,7 +14,6 @@
   ],
   "exclude": [],
   "tier_override": {
-    "openai/gpt-5.6": "frontier",
     "openai/gpt-5.6-luna": "efficient",
     "zai/glm-5.3": "efficient",
     "zai/glm-5.3-flash": "efficient",

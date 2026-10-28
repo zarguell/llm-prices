@@ -1,0 +1,348 @@
+{
+  "tiers": {
+    "frontier": {
+      "label": "Frontier",
+      "description": "Latest generation, highest capability.",
+      "color": "#D97757"
+    },
+    "efficient": {
+      "label": "Efficient",
+      "description": "Capable models at a fraction of frontier cost.",
+      "color": "#7C9885"
+    },
+    "workhorse": {
+      "label": "Workhorse",
+      "description": "Ubiquitous open and mid-range models.",
+      "color": "#5B8DB8"
+    }
+  },
+  "models": [
+    {
+      "key": "cortecs/claude-opus-5.5",
+      "or_id": "anthropic/claude-opus-5.5",
+      "hf_id": null,
+      "tier": "frontier",
+      "elo": 1468,
+      "n_cats": 12,
+      "params_b": null
+    },
+    {
+      "key": "moonshotai/kimi-k3.1-pro",
+      "or_id": "moonshotai/kimi-k3.1-pro",
+      "hf_id": null,
+      "tier": "frontier",
+      "elo": 1447,
+      "n_cats": 7,
+      "params_b": null
+    },
+    {
+      "key": "venice/muse-wonder",
+      "or_id": "meta/muse-wonder",
+      "hf_id": null,
+      "tier": "frontier",
+      "elo": 1445,
+      "n_cats": 10,
+      "params_b": null
+    },
+    {
+      "key": "google/gemini-4-argon",
+      "or_id": "google/gemini-4-argon",
+      "hf_id": null,
+      "tier": "frontier",
+      "elo": 1438,
+      "n_cats": 9,
+      "params_b": null
+    },
+    {
+      "key": "openai/gpt-6.1-sol",
+      "or_id": "openai/gpt-6.1-sol",
+      "hf_id": null,
+      "tier": "frontier",
+      "elo": 1436,
+      "n_cats": 10,
+      "params_b": null
+    },
+    {
+      "key": "boundless/claude-fable-5.1",
+      "or_id": "anthropic/claude-fable-5.1",
+      "hf_id": null,
+      "tier": "frontier",
+      "elo": 1416,
+      "n_cats": 15,
+      "params_b": null
+    },
+    {
+      "key": "cortecs/claude-sonnet-5.5",
+      "or_id": "anthropic/claude-sonnet-5.5",
+      "hf_id": null,
+      "tier": "frontier",
+      "elo": 1414,
+      "n_cats": 10,
+      "params_b": null
+    },
+    {
+      "key": "meta/muse-spark-1.3",
+      "or_id": "meta/muse-spark-1.3",
+      "hf_id": null,
+      "tier": "frontier",
+      "elo": 1393,
+      "n_cats": 15,
+      "params_b": null
+    },
+    {
+      "key": "moonshotai/kimi-k3",
+      "or_id": "moonshotai/kimi-k3",
+      "hf_id": "moonshotai/kimi-k3",
+      "tier": "efficient",
+      "elo": 1385,
+      "n_cats": 17,
+      "params_b": null
+    },
+    {
+      "key": "zai/glm-5.1",
+      "or_id": "z-ai/glm-5.1",
+      "hf_id": "z-ai/glm-5.1",
+      "tier": "efficient",
+      "elo": 1366,
+      "n_cats": 22,
+      "params_b": null
+    },
+    {
+      "key": "alibaba-token-plan-cn/deepseek-v4.1-flash-1017",
+      "or_id": "deepseek/deepseek-v4.1-flash-1017",
+      "hf_id": "deepseek/deepseek-v4.1-flash-1017",
+      "tier": "efficient",
+      "elo": 1362,
+      "n_cats": 9,
+      "params_b": null
+    },
+    {
+      "key": "anthropic/claude-opus-5",
+      "or_id": "anthropic/claude-opus-5",
+      "hf_id": null,
+      "tier": "efficient",
+      "elo": 1358,
+      "n_cats": 17,
+      "params_b": null
+    },
+    {
+      "key": "cortecs/claude-haiku-5.5",
+      "or_id": "anthropic/claude-haiku-5.5",
+      "hf_id": null,
+      "tier": "efficient",
+      "elo": 1344,
+      "n_cats": 7,
+      "params_b": null
+    },
+    {
+      "key": "ollama-cloud/muse-spark-open",
+      "or_id": "meta/muse-spark-open",
+      "hf_id": "meta/muse-spark-open",
+      "tier": "efficient",
+      "elo": 1341,
+      "n_cats": 4,
+      "params_b": null
+    },
+    {
+      "key": "xiaomi/mimo-v2.6-pro",
+      "or_id": "xiaomi/mimo-v2.6-pro",
+      "hf_id": "xiaomi/mimo-v2.6-pro",
+      "tier": "efficient",
+      "elo": 1336,
+      "n_cats": 8,
+      "params_b": null
+    },
+    {
+      "key": "anthropic/claude-fable-5",
+      "or_id": "anthropic/claude-fable-5",
+      "hf_id": null,
+      "tier": "efficient",
+      "elo": 1335,
+      "n_cats": 18,
+      "params_b": null
+    },
+    {
+      "key": "meta/muse-spark-1.2",
+      "or_id": "meta/muse-spark-1.2",
+      "hf_id": null,
+      "tier": "efficient",
+      "elo": 1335,
+      "n_cats": 17,
+      "params_b": null
+    },
+    {
+      "key": "zai/glm-5.3",
+      "or_id": "z-ai/glm-5.3",
+      "hf_id": "z-ai/glm-5.3",
+      "tier": "efficient",
+      "elo": 1328,
+      "n_cats": 11,
+      "params_b": null
+    },
+    {
+      "key": "google/gemini-3.7-flash",
+      "or_id": "google/gemini-3.7-flash",
+      "hf_id": null,
+      "tier": "efficient",
+      "elo": 1317,
+      "n_cats": 16,
+      "params_b": null
+    },
+    {
+      "key": "google/gemini-3.8-flash",
+      "or_id": "google/gemini-3.8-flash",
+      "hf_id": null,
+      "tier": "efficient",
+      "elo": 1313,
+      "n_cats": 16,
+      "params_b": null
+    },
+    {
+      "key": "azure-cognitive-services/grok-4.7",
+      "or_id": "x-ai/grok-4.7",
+      "hf_id": null,
+      "tier": "workhorse",
+      "elo": 1313,
+      "n_cats": 6,
+      "params_b": null
+    },
+    {
+      "key": "zai/glm-5.3-flash",
+      "or_id": "z-ai/glm-5.3-flash",
+      "hf_id": "z-ai/glm-5.3-flash",
+      "tier": "workhorse",
+      "elo": 1313,
+      "n_cats": 8,
+      "params_b": null
+    },
+    {
+      "key": "github-copilot/claude-opus-4.8",
+      "or_id": "anthropic/claude-opus-4.8",
+      "hf_id": null,
+      "tier": "workhorse",
+      "elo": 1310,
+      "n_cats": 23,
+      "params_b": null
+    },
+    {
+      "key": "google/gemini-3.6-flash",
+      "or_id": "google/gemini-3.6-flash",
+      "hf_id": null,
+      "tier": "workhorse",
+      "elo": 1299,
+      "n_cats": 16,
+      "params_b": null
+    },
+    {
+      "key": "abacus/grok-4.6",
+      "or_id": "x-ai/grok-4.6",
+      "hf_id": null,
+      "tier": "workhorse",
+      "elo": 1294,
+      "n_cats": 17,
+      "params_b": null
+    },
+    {
+      "key": "openai/gpt-5.5",
+      "or_id": "openai/gpt-5.5",
+      "hf_id": null,
+      "tier": "workhorse",
+      "elo": 1291,
+      "n_cats": 21,
+      "params_b": null
+    },
+    {
+      "key": "deepseek/deepseek-v4-flash",
+      "or_id": "deepseek/deepseek-v4-flash",
+      "hf_id": "deepseek/deepseek-v4-flash",
+      "tier": "efficient",
+      "elo": 1206,
+      "n_cats": 8,
+      "params_b": null
+    },
+    {
+      "key": "neon/llama-4-maverick",
+      "or_id": "meta-llama/llama-4-maverick",
+      "hf_id": "meta-llama/llama-4-maverick",
+      "tier": "workhorse",
+      "elo": 898,
+      "n_cats": 6,
+      "params_b": null
+    },
+    {
+      "key": "helicone/llama-4-scout",
+      "or_id": "meta-llama/llama-4-scout",
+      "hf_id": "meta-llama/llama-4-scout",
+      "tier": "workhorse",
+      "elo": 896,
+      "n_cats": 5,
+      "params_b": null
+    },
+    {
+      "key": "meta/muse-spark-1.2-contributor",
+      "or_id": "meta/muse-spark-1.2-contributor",
+      "hf_id": null,
+      "tier": "workhorse",
+      "elo": null,
+      "n_cats": 0,
+      "params_b": null
+    },
+    {
+      "key": "openai/gpt-5.6",
+      "or_id": "openai/gpt-5.6",
+      "hf_id": null,
+      "tier": "frontier",
+      "elo": null,
+      "n_cats": 0,
+      "params_b": null
+    },
+    {
+      "key": "openai/gpt-5.6-luna",
+      "or_id": "openai/gpt-5.6-luna",
+      "hf_id": null,
+      "tier": "efficient",
+      "elo": null,
+      "n_cats": 0,
+      "params_b": null
+    },
+    {
+      "key": "qwen/qwen3.8-27b",
+      "or_id": "qwen/qwen3.8-27b",
+      "hf_id": "qwen/qwen3.8-27b",
+      "tier": "workhorse",
+      "elo": null,
+      "n_cats": 0,
+      "params_b": null
+    },
+    {
+      "key": "qwen/qwen3.8-flash",
+      "or_id": "qwen/qwen3.8-flash",
+      "hf_id": null,
+      "tier": "efficient",
+      "elo": null,
+      "n_cats": 0,
+      "params_b": null
+    },
+    {
+      "key": "tencent/hy4-preview",
+      "or_id": "tencent/hy4-preview",
+      "hf_id": "tencent/hy4-preview",
+      "tier": "efficient",
+      "elo": null,
+      "n_cats": 0,
+      "params_b": null
+    }
+  ],
+  "_meta": {
+    "generated": "2026-10-28T11:00:09.434558+00:00",
+    "total": 35,
+    "by_tier": {
+      "frontier": 9,
+      "efficient": 16,
+      "workhorse": 10
+    },
+    "benchmark_categories": 360,
+    "hysteresis_holds": 0,
+    "cap_dropped": 102
+  }
+}

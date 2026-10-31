@@ -205,6 +205,62 @@ def test_build_single_snapshot_baseline():
         assert "<svg" in tr  # single points still render
 
 
+def test_tracked_values_follow_flatten_pricing_rule():
+    prov = {"p": {"models": {
+        "both": {"cost": {"input": 1, "output": 2}},
+        "in-only": {"cost": {"input": 3}},
+        "free": {"cost": {"input": 0, "output": 0}},
+    }}}
+    vals = ssg._tracked_values(prov, {"p/both", "p/in-only", "p/free",
+                                     "p/absent"})
+    # same rule as flatten(): priced needs BOTH rates, so input-only is None
+    assert vals == {"p/both": {"input": 1.0, "output": 2.0},
+                    "p/in-only": {"input": None, "output": None},
+                    "p/free": {"input": 0.0, "output": 0.0}}
+
+
+def test_trend_series_reads_lean_values():
+    dates = ["2026-08-21", "2026-08-28"]
+    vals = {"2026-08-21": {"zai/glm-flash": {"input": 0.1, "output": 0.2}},
+            "2026-08-28": {"zai/glm-flash": {"input": 0.05, "output": 0.2}}}
+    got_dates, series = ssg.trend_series(
+        vals, dates, ["zai/glm-flash", "x/missing"], "input")
+    assert got_dates == dates
+    # keys with no data never render a line
+    assert [s["label"] for s in series] == ["zai/glm-flash"]
+    assert series[0]["points"] == [0.1, 0.05]
+
+
+def test_history_loader_keeps_only_two_full_snapshots():
+    """Regression 2026-10-31: load_snapshots() held one full snapshot per
+    published day (~20 MB each) and the trend pass flattened every one of
+    them, so the build grew with history until it swapped past cronman's
+    600 s timeout. The loader must keep only the two newest full snapshots
+    and derive tracked rates straight from the raw records."""
+    with tempfile.TemporaryDirectory() as tmp:
+        data_dir = os.path.join(tmp, "snapshots")
+        os.makedirs(data_dir)
+        import gzip
+        for day, prov in (("2026-08-21", _providers()),
+                          ("2026-08-28", _providers()),
+                          ("2026-09-04", _providers_next_week())):
+            with gzip.open(os.path.join(data_dir, f"{day}.json.gz"), "wt") as f:
+                json.dump({"fetched": day + "T00:00:00Z",
+                           "providers": prov}, f)
+        tracked = ["zai/glm-flash", "zai/glm-big", "ogo/half-free",
+                   "zai/nope"]
+        dates, tail, trend = ssg.load_history(data_dir, tracked)
+        assert dates == ["2026-08-21", "2026-08-28", "2026-09-04"]
+        assert [d for d, _ in tail] == ["2026-08-28", "2026-09-04"]
+        # rates match flatten()'s for the same day
+        flat = ssg.by_key(ssg.flatten(_providers()))
+        first = trend["2026-08-21"]
+        assert first["zai/glm-flash"]["input"] == flat["zai/glm-flash"]["input"]
+        assert first["ogo/half-free"]["output"] == flat["ogo/half-free"]["output"]
+        assert "zai/nope" not in first
+        assert trend["2026-09-04"]["zai/glm-flash"]["input"] == 0.05
+
+
 if __name__ == "__main__":
     failed = 0
     for name, fn in sorted(globals().items()):

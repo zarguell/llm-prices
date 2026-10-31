@@ -52,20 +52,42 @@ def snapshot_files(data_dir: str = SNAPSHOTS_DIR) -> list[str]:
     return sorted(glob.glob(os.path.join(data_dir, "????-??-??.json.gz")))
 
 
-def load_snapshots(data_dir: str = SNAPSHOTS_DIR) -> list[tuple[str, dict]]:
-    """[(date_str, providers_dict)] oldest → newest; undecodable files skipped."""
-    out = []
+def load_history(data_dir: str = SNAPSHOTS_DIR,
+                 tracked: list[str] | None = None):
+    """Streaming snapshot history — (dates, tail, trend_values).
+
+    dates        every readable snapshot date, oldest → newest
+    tail         at most the two newest (date, providers) entries
+    trend_values {date: {key: {"input": rate, "output": rate}}} for tracked
+
+    Deliberately retains only two full snapshots: the site needs the newest
+    (rows/stats) and the previous one (diff/changes). Holding one snapshot
+    per day plus a flattened index for the trend charts grew without bound
+    as the history accumulated — at 57 snapshots × ~8.9k models the build
+    held >1 GB live objects, swapped on the 3 GB cron host and blew
+    cronman's 600 s timeout (2026-10-31). Peak memory is now independent of
+    how many days we have published."""
+    keys = set(tracked or ())
+    dates: list[str] = []
+    tail: list[tuple[str, dict]] = []
+    trend_values: dict[str, dict] = {}
     for path in snapshot_files(data_dir):
         try:
             with gzip.open(path, "rt", encoding="utf-8") as f:
                 entry = json.load(f)
             date_str = os.path.basename(path)[:10]
             providers = entry.get("providers")
-            if isinstance(providers, dict):
-                out.append((date_str, providers))
+            if not isinstance(providers, dict):
+                continue
         except Exception:
             continue
-    return out
+        dates.append(date_str)
+        trend_values[date_str] = (_tracked_values(providers, keys)
+                                  if keys else {})
+        tail.append((date_str, providers))
+        if len(tail) > 2:
+            tail.pop(0)
+    return dates, tail, trend_values
 
 
 # ── flattening ──
@@ -323,21 +345,37 @@ PALETTE = ["#D97757", "#7C9885", "#5B8DB8", "#B8865B", "#9A7CB3",
            "#C25B5B", "#5FA8A0", "#8A8D65"]
 
 
-def tracked_series(snapshots: list[tuple[str, dict]], tracked: list[str],
-                   field: str) -> tuple[list[str], list[dict]]:
+def _tracked_values(providers: dict, keys: set[str]) -> dict:
+    """{'provider/model': {'input': rate, 'output': rate}} for tracked keys.
+
+    Mirrors flatten()'s pricing rule — a model is priced only when BOTH rates
+    exist — without building a full row set for every snapshot in history."""
+    out = {}
+    for prov, pdata in providers.items():
+        if not isinstance(pdata, dict):
+            continue
+        models = pdata.get("models")
+        if not isinstance(models, dict):
+            continue
+        prefix = f"{prov}/"
+        for mid, m in models.items():
+            key = prefix + mid
+            if key not in keys or not isinstance(m, dict):
+                continue
+            cost = m.get("cost") if isinstance(m.get("cost"), dict) else {}
+            priced = "input" in cost and "output" in cost
+            out[key] = {"input": _f(cost.get("input")) if priced else None,
+                        "output": _f(cost.get("output")) if priced else None}
+    return out
+
+
+def trend_series(trend_values: dict, dates: list[str], tracked: list[str],
+                 field: str) -> tuple[list[str], list[dict]]:
     """(dates, series) for tracked 'provider/model' keys across snapshots."""
-    dates = [d for d, _ in snapshots]
-    index = [{}, ]
-    per_date = []
-    for _, providers in snapshots:
-        rows = by_key(flatten(providers))
-        per_date.append(rows)
     series = []
     for t_i, key in enumerate(tracked):
-        points = []
-        for rows in per_date:
-            r = rows.get(key)
-            points.append(r.get(field) if r and r.get(field) is not None else None)
+        points = [(trend_values.get(d, {}).get(key) or {}).get(field)
+                  for d in dates]
         if any(v is not None for v in points):
             series.append({"label": key, "color": PALETTE[t_i % len(PALETTE)],
                            "points": points})
@@ -408,19 +446,19 @@ def build(root: str = ROOT, data_dir: str = SNAPSHOTS_DIR,
           tracked: list[str] | None = None) -> list[str]:
     env = Environment(loader=FileSystemLoader(TMPL_DIR),
                       autoescape=select_autoescape(["html", "xml"]))
-    snapshots = load_snapshots(data_dir)
-    if not snapshots:
-        raise SystemExit("no snapshots found — run engine/snapshot.py first")
-    cur_date, cur_providers = snapshots[-1]
-    prev_rows = flatten(snapshots[-2][1]) if len(snapshots) > 1 else None
-    rows = flatten(cur_providers)
-    stats = compute_stats(rows)
     if tracked is None:
         try:
             with open(TRACKED_FILE, "r", encoding="utf-8") as f:
                 tracked = [t for t in json.load(f) if isinstance(t, str)]
         except Exception:
             tracked = []
+    dates, tail, trend_values = load_history(data_dir, tracked)
+    if not tail:
+        raise SystemExit("no snapshots found — run engine/snapshot.py first")
+    cur_date, cur_providers = tail[-1]
+    prev_rows = flatten(tail[0][1]) if len(tail) > 1 else None
+    rows = flatten(cur_providers)
+    stats = compute_stats(rows)
     d = diff(rows, prev_rows) if prev_rows is not None else None
     now = datetime.now(timezone.utc)
     generated = now.strftime("%Y-%m-%d")
@@ -436,7 +474,7 @@ def build(root: str = ROOT, data_dir: str = SNAPSHOTS_DIR,
         kw.setdefault("data_date", cur_date)
         kw.setdefault("generated", generated)
         kw.setdefault("stats", stats)
-        kw.setdefault("snapshots_n", len(snapshots))
+        kw.setdefault("snapshots_n", len(dates))
         content = env.get_template(template).render(**kw)
         _write(out_abs, content, manifest, root)
 
@@ -464,8 +502,8 @@ def build(root: str = ROOT, data_dir: str = SNAPSHOTS_DIR,
     render_page(os.path.join("providers", "index.html"), "providers.html")
 
     # trends
-    in_dates, in_series = tracked_series(snapshots, tracked, "input")
-    out_dates, out_series = tracked_series(snapshots, tracked, "output")
+    in_dates, in_series = trend_series(trend_values, dates, tracked, "input")
+    out_dates, out_series = trend_series(trend_values, dates, tracked, "output")
     render_page(os.path.join("trends", "index.html"), "trends.html",
                 tracked=tracked,
                 chart_in_svg=svg_line_chart(in_dates, in_series) if in_series else "",
@@ -474,7 +512,7 @@ def build(root: str = ROOT, data_dir: str = SNAPSHOTS_DIR,
 
     # changes
     render_page(os.path.join("changes", "index.html"), "changes.html", diff=d,
-                prev_date=snapshots[-2][0] if len(snapshots) > 1 else None,
+                prev_date=tail[0][0] if len(tail) > 1 else None,
                 cur_rows=rows, prev_rows=prev_rows)
 
     # stats

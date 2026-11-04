@@ -18,7 +18,7 @@
   },
   "models": [
     {
-      "key": "boundless/claude-opus-5.5",
+      "key": "github-copilot/claude-opus-5.5",
       "or_id": "anthropic/claude-opus-5.5",
       "hf_id": null,
       "tier": "frontier",
@@ -49,16 +49,16 @@
       "or_id": "openai/gpt-6.1-sol",
       "hf_id": null,
       "tier": "frontier",
-      "elo": 1437,
+      "elo": 1436,
       "n_cats": 11,
       "params_b": null
     },
     {
-      "key": "requesty/claude-fable-5.1",
+      "key": "github-copilot/claude-fable-5.1",
       "or_id": "anthropic/claude-fable-5.1",
       "hf_id": null,
       "tier": "frontier",
-      "elo": 1422,
+      "elo": 1426,
       "n_cats": 15,
       "params_b": null
     },
@@ -72,11 +72,11 @@
       "params_b": null
     },
     {
-      "key": "cortecs/claude-sonnet-5.5",
+      "key": "github-copilot/claude-sonnet-5.5",
       "or_id": "anthropic/claude-sonnet-5.5",
       "hf_id": null,
       "tier": "frontier",
-      "elo": 1407,
+      "elo": 1408,
       "n_cats": 11,
       "params_b": null
     },
@@ -99,7 +99,7 @@
       "params_b": null
     },
     {
-      "key": "greenpt/glm-5.1",
+      "key": "dinference/glm-5.1",
       "or_id": "z-ai/glm-5.1",
       "hf_id": "z-ai/glm-5.1",
       "tier": "efficient",
@@ -108,7 +108,7 @@
       "params_b": null
     },
     {
-      "key": "scaleway/deepseek-v4.1-flash-1017",
+      "key": "hyper/deepseek-v4.1-flash-1017",
       "or_id": "deepseek/deepseek-v4.1-flash-1017",
       "hf_id": "deepseek/deepseek-v4.1-flash-1017",
       "tier": "efficient",
@@ -126,7 +126,7 @@
       "params_b": null
     },
     {
-      "key": "cortecs/claude-haiku-5.5",
+      "key": "github-copilot/claude-haiku-5.5",
       "or_id": "anthropic/claude-haiku-5.5",
       "hf_id": null,
       "tier": "efficient",
@@ -162,16 +162,16 @@
       "params_b": null
     },
     {
-      "key": "scaleway/glm-5.3",
+      "key": "zai/glm-5.3",
       "or_id": "z-ai/glm-5.3",
       "hf_id": "z-ai/glm-5.3",
       "tier": "efficient",
-      "elo": 1327,
+      "elo": 1326,
       "n_cats": 11,
       "params_b": null
     },
     {
-      "key": "requesty/muse-spark-open",
+      "key": "hyper/muse-spark-open",
       "or_id": "meta/muse-spark-open",
       "hf_id": "meta/muse-spark-open",
       "tier": "efficient",
@@ -189,7 +189,7 @@
       "params_b": null
     },
     {
-      "key": "aihubmix/grok-4.7",
+      "key": "azure/grok-4.7",
       "or_id": "x-ai/grok-4.7",
       "hf_id": null,
       "tier": "efficient",
@@ -198,7 +198,7 @@
       "params_b": null
     },
     {
-      "key": "aihubmix/glm-5.3-flash",
+      "key": "zai/glm-5.3-flash",
       "or_id": "z-ai/glm-5.3-flash",
       "hf_id": "z-ai/glm-5.3-flash",
       "tier": "workhorse",
@@ -216,7 +216,7 @@
       "params_b": null
     },
     {
-      "key": "model-oracle-ai/claude-opus-4.8",
+      "key": "github-copilot/claude-opus-4.8",
       "or_id": "anthropic/claude-opus-4.8",
       "hf_id": null,
       "tier": "workhorse",
@@ -229,16 +229,16 @@
       "or_id": "google/gemini-3.6-flash",
       "hf_id": null,
       "tier": "workhorse",
-      "elo": 1298,
+      "elo": 1297,
       "n_cats": 17,
       "params_b": null
     },
     {
-      "key": "aihubmix/grok-4.6",
+      "key": "azure/grok-4.6",
       "or_id": "x-ai/grok-4.6",
       "hf_id": null,
       "tier": "workhorse",
-      "elo": 1294,
+      "elo": 1295,
       "n_cats": 18,
       "params_b": null
     },
@@ -261,7 +261,7 @@
       "params_b": null
     },
     {
-      "key": "digitalocean/llama-4-maverick",
+      "key": "helicone/llama-4-maverick",
       "or_id": "meta-llama/llama-4-maverick",
       "hf_id": "meta-llama/llama-4-maverick",
       "tier": "workhorse",
@@ -334,7 +334,7 @@
     }
   ],
   "_meta": {
-    "generated": "2026-11-03T11:00:08.291073+00:00",
+    "generated": "2026-11-04T11:00:08.715813+00:00",
     "total": 35,
     "by_tier": {
       "frontier": 9,

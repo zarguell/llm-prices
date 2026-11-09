@@ -18,7 +18,7 @@
   },
   "models": [
     {
-      "key": "cortecs/claude-opus-5.5",
+      "key": "github-copilot/claude-opus-5.5",
       "or_id": "anthropic/claude-opus-5.5",
       "hf_id": null,
       "tier": "frontier",
@@ -29,9 +29,9 @@
     {
       "key": "moonshotai/kimi-k3.1-pro",
       "or_id": "moonshotai/kimi-k3.1-pro",
-      "hf_id": null,
+      "hf_id": "moonshotai/kimi-k3.1-pro",
       "tier": "frontier",
-      "elo": 1446,
+      "elo": 1442,
       "n_cats": 15,
       "params_b": null
     },
@@ -40,7 +40,7 @@
       "or_id": "meta/muse-wonder",
       "hf_id": null,
       "tier": "frontier",
-      "elo": 1440,
+      "elo": 1439,
       "n_cats": 10,
       "params_b": null
     },
@@ -50,25 +50,25 @@
       "hf_id": null,
       "tier": "frontier",
       "elo": 1432,
-      "n_cats": 12,
+      "n_cats": 13,
       "params_b": null
     },
     {
-      "key": "requesty/claude-fable-5.1",
+      "key": "github-copilot/claude-fable-5.1",
       "or_id": "anthropic/claude-fable-5.1",
       "hf_id": null,
       "tier": "frontier",
-      "elo": 1422,
+      "elo": 1426,
       "n_cats": 15,
       "params_b": null
     },
     {
-      "key": "cortecs/claude-sonnet-5.5",
+      "key": "github-copilot/claude-sonnet-5.5",
       "or_id": "anthropic/claude-sonnet-5.5",
       "hf_id": null,
       "tier": "frontier",
       "elo": 1404,
-      "n_cats": 13,
+      "n_cats": 14,
       "params_b": null
     },
     {
@@ -76,7 +76,7 @@
       "or_id": "meta/muse-spark-1.3",
       "hf_id": null,
       "tier": "frontier",
-      "elo": 1390,
+      "elo": 1389,
       "n_cats": 18,
       "params_b": null
     },
@@ -94,12 +94,12 @@
       "or_id": "moonshotai/kimi-k3",
       "hf_id": "moonshotai/kimi-k3",
       "tier": "efficient",
-      "elo": 1377,
+      "elo": 1374,
       "n_cats": 19,
       "params_b": null
     },
     {
-      "key": "cortecs/glm-5.1",
+      "key": "alibaba-token-plan/glm-5.1",
       "or_id": "z-ai/glm-5.1",
       "hf_id": "z-ai/glm-5.1",
       "tier": "efficient",
@@ -117,11 +117,11 @@
       "params_b": null
     },
     {
-      "key": "cortecs/deepseek-v4.1-flash-1017",
+      "key": "alibaba-token-plan/deepseek-v4.1-flash-1017",
       "or_id": "deepseek/deepseek-v4.1-flash-1017",
       "hf_id": "deepseek/deepseek-v4.1-flash-1017",
       "tier": "efficient",
-      "elo": 1356,
+      "elo": 1354,
       "n_cats": 9,
       "params_b": null
     },
@@ -135,11 +135,11 @@
       "params_b": null
     },
     {
-      "key": "cortecs/claude-haiku-5.5",
+      "key": "github-copilot/claude-haiku-5.5",
       "or_id": "anthropic/claude-haiku-5.5",
       "hf_id": null,
       "tier": "efficient",
-      "elo": 1335,
+      "elo": 1333,
       "n_cats": 8,
       "params_b": null
     },
@@ -162,11 +162,11 @@
       "params_b": null
     },
     {
-      "key": "requesty/muse-spark-open",
+      "key": "venice/muse-spark-open",
       "or_id": "meta/muse-spark-open",
       "hf_id": "meta/muse-spark-open",
       "tier": "efficient",
-      "elo": 1324,
+      "elo": 1317,
       "n_cats": 5,
       "params_b": null
     },
@@ -175,39 +175,30 @@
       "or_id": "google/gemini-3.7-flash",
       "hf_id": null,
       "tier": "efficient",
-      "elo": 1316,
+      "elo": 1315,
       "n_cats": 18,
       "params_b": null
     },
     {
-      "key": "cortecs/glm-5.3",
-      "or_id": "z-ai/glm-5.3",
-      "hf_id": "z-ai/glm-5.3",
-      "tier": "efficient",
-      "elo": 1315,
-      "n_cats": 12,
-      "params_b": null
-    },
-    {
-      "key": "requesty/grok-4.7",
+      "key": "aihubmix/grok-4.7",
       "or_id": "x-ai/grok-4.7",
       "hf_id": null,
       "tier": "efficient",
-      "elo": 1314,
+      "elo": 1312,
       "n_cats": 10,
       "params_b": null
     },
     {
-      "key": "google/gemini-3.8-flash",
-      "or_id": "google/gemini-3.8-flash",
-      "hf_id": null,
-      "tier": "workhorse",
+      "key": "alibaba-token-plan/glm-5.3",
+      "or_id": "z-ai/glm-5.3",
+      "hf_id": "z-ai/glm-5.3",
+      "tier": "efficient",
       "elo": 1311,
-      "n_cats": 18,
+      "n_cats": 12,
       "params_b": null
     },
     {
-      "key": "model-oracle-ai/claude-opus-4.8",
+      "key": "github-copilot/claude-opus-4.8",
       "or_id": "anthropic/claude-opus-4.8",
       "hf_id": null,
       "tier": "workhorse",
@@ -216,11 +207,20 @@
       "params_b": null
     },
     {
-      "key": "cortecs/glm-5.3-flash",
+      "key": "google/gemini-3.8-flash",
+      "or_id": "google/gemini-3.8-flash",
+      "hf_id": null,
+      "tier": "workhorse",
+      "elo": 1309,
+      "n_cats": 18,
+      "params_b": null
+    },
+    {
+      "key": "vivgrid/glm-5.3-flash",
       "or_id": "z-ai/glm-5.3-flash",
       "hf_id": "z-ai/glm-5.3-flash",
       "tier": "workhorse",
-      "elo": 1309,
+      "elo": 1307,
       "n_cats": 8,
       "params_b": null
     },
@@ -229,16 +229,16 @@
       "or_id": "google/gemini-3.6-flash",
       "hf_id": null,
       "tier": "workhorse",
-      "elo": 1296,
+      "elo": 1295,
       "n_cats": 18,
       "params_b": null
     },
     {
-      "key": "requesty/grok-4.6",
+      "key": "aihubmix/grok-4.6",
       "or_id": "x-ai/grok-4.6",
       "hf_id": null,
       "tier": "workhorse",
-      "elo": 1292,
+      "elo": 1291,
       "n_cats": 20,
       "params_b": null
     },
@@ -256,12 +256,12 @@
       "or_id": "deepseek/deepseek-v4-flash",
       "hf_id": "deepseek/deepseek-v4-flash",
       "tier": "efficient",
-      "elo": 1206,
+      "elo": 1204,
       "n_cats": 8,
       "params_b": null
     },
     {
-      "key": "neon/llama-4-maverick",
+      "key": "helicone/llama-4-maverick",
       "or_id": "meta-llama/llama-4-maverick",
       "hf_id": "meta-llama/llama-4-maverick",
       "tier": "workhorse",
@@ -334,14 +334,14 @@
     }
   ],
   "_meta": {
-    "generated": "2026-11-08T11:00:07.743940+00:00",
+    "generated": "2026-11-09T11:00:07.690232+00:00",
     "total": 35,
     "by_tier": {
       "frontier": 9,
       "efficient": 16,
       "workhorse": 10
     },
-    "benchmark_categories": 401,
+    "benchmark_categories": 403,
     "hysteresis_holds": 0,
     "cap_dropped": 98
   }

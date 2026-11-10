@@ -18,12 +18,12 @@
   },
   "models": [
     {
-      "key": "github-copilot/claude-opus-5.5",
+      "key": "cortecs/claude-opus-5.5",
       "or_id": "anthropic/claude-opus-5.5",
       "hf_id": null,
       "tier": "frontier",
-      "elo": 1468,
-      "n_cats": 15,
+      "elo": 1467,
+      "n_cats": 16,
       "params_b": null
     },
     {
@@ -31,7 +31,7 @@
       "or_id": "moonshotai/kimi-k3.1-pro",
       "hf_id": "moonshotai/kimi-k3.1-pro",
       "tier": "frontier",
-      "elo": 1442,
+      "elo": 1445,
       "n_cats": 15,
       "params_b": null
     },
@@ -40,8 +40,8 @@
       "or_id": "meta/muse-wonder",
       "hf_id": null,
       "tier": "frontier",
-      "elo": 1439,
-      "n_cats": 10,
+      "elo": 1438,
+      "n_cats": 11,
       "params_b": null
     },
     {
@@ -49,8 +49,17 @@
       "or_id": "openai/gpt-6.1-sol",
       "hf_id": null,
       "tier": "frontier",
-      "elo": 1432,
+      "elo": 1433,
       "n_cats": 13,
+      "params_b": null
+    },
+    {
+      "key": "cortecs/claude-sonnet-5.5",
+      "or_id": "anthropic/claude-sonnet-5.5",
+      "hf_id": null,
+      "tier": "frontier",
+      "elo": 1403,
+      "n_cats": 14,
       "params_b": null
     },
     {
@@ -58,17 +67,8 @@
       "or_id": "anthropic/claude-fable-5.1",
       "hf_id": null,
       "tier": "frontier",
-      "elo": 1426,
+      "elo": 1397,
       "n_cats": 15,
-      "params_b": null
-    },
-    {
-      "key": "github-copilot/claude-sonnet-5.5",
-      "or_id": "anthropic/claude-sonnet-5.5",
-      "hf_id": null,
-      "tier": "frontier",
-      "elo": 1404,
-      "n_cats": 14,
       "params_b": null
     },
     {
@@ -76,7 +76,7 @@
       "or_id": "meta/muse-spark-1.3",
       "hf_id": null,
       "tier": "frontier",
-      "elo": 1389,
+      "elo": 1388,
       "n_cats": 18,
       "params_b": null
     },
@@ -99,7 +99,7 @@
       "params_b": null
     },
     {
-      "key": "alibaba-token-plan/glm-5.1",
+      "key": "dinference/glm-5.1",
       "or_id": "z-ai/glm-5.1",
       "hf_id": "z-ai/glm-5.1",
       "tier": "efficient",
@@ -117,7 +117,7 @@
       "params_b": null
     },
     {
-      "key": "alibaba-token-plan/deepseek-v4.1-flash-1017",
+      "key": "digitalocean/deepseek-v4.1-flash-1017",
       "or_id": "deepseek/deepseek-v4.1-flash-1017",
       "hf_id": "deepseek/deepseek-v4.1-flash-1017",
       "tier": "efficient",
@@ -135,7 +135,7 @@
       "params_b": null
     },
     {
-      "key": "github-copilot/claude-haiku-5.5",
+      "key": "cortecs/claude-haiku-5.5",
       "or_id": "anthropic/claude-haiku-5.5",
       "hf_id": null,
       "tier": "efficient",
@@ -157,17 +157,8 @@
       "or_id": "meta/muse-spark-1.2",
       "hf_id": null,
       "tier": "efficient",
-      "elo": 1326,
+      "elo": 1325,
       "n_cats": 19,
-      "params_b": null
-    },
-    {
-      "key": "venice/muse-spark-open",
-      "or_id": "meta/muse-spark-open",
-      "hf_id": "meta/muse-spark-open",
-      "tier": "efficient",
-      "elo": 1317,
-      "n_cats": 5,
       "params_b": null
     },
     {
@@ -176,11 +167,20 @@
       "hf_id": null,
       "tier": "efficient",
       "elo": 1315,
-      "n_cats": 18,
+      "n_cats": 19,
       "params_b": null
     },
     {
-      "key": "aihubmix/grok-4.7",
+      "key": "venice/muse-spark-open",
+      "or_id": "meta/muse-spark-open",
+      "hf_id": "meta/muse-spark-open",
+      "tier": "efficient",
+      "elo": 1315,
+      "n_cats": 5,
+      "params_b": null
+    },
+    {
+      "key": "302ai/grok-4.7",
       "or_id": "x-ai/grok-4.7",
       "hf_id": null,
       "tier": "efficient",
@@ -189,7 +189,7 @@
       "params_b": null
     },
     {
-      "key": "alibaba-token-plan/glm-5.3",
+      "key": "agentrouter/glm-5.3",
       "or_id": "z-ai/glm-5.3",
       "hf_id": "z-ai/glm-5.3",
       "tier": "efficient",
@@ -211,12 +211,12 @@
       "or_id": "google/gemini-3.8-flash",
       "hf_id": null,
       "tier": "workhorse",
-      "elo": 1309,
+      "elo": 1308,
       "n_cats": 18,
       "params_b": null
     },
     {
-      "key": "vivgrid/glm-5.3-flash",
+      "key": "302ai/glm-5.3-flash",
       "or_id": "z-ai/glm-5.3-flash",
       "hf_id": "z-ai/glm-5.3-flash",
       "tier": "workhorse",
@@ -234,7 +234,7 @@
       "params_b": null
     },
     {
-      "key": "aihubmix/grok-4.6",
+      "key": "302ai/grok-4.6",
       "or_id": "x-ai/grok-4.6",
       "hf_id": null,
       "tier": "workhorse",
@@ -261,7 +261,7 @@
       "params_b": null
     },
     {
-      "key": "helicone/llama-4-maverick",
+      "key": "neon/llama-4-maverick",
       "or_id": "meta-llama/llama-4-maverick",
       "hf_id": "meta-llama/llama-4-maverick",
       "tier": "workhorse",
@@ -334,14 +334,14 @@
     }
   ],
   "_meta": {
-    "generated": "2026-11-09T11:00:07.690232+00:00",
+    "generated": "2026-11-10T11:00:07.894954+00:00",
     "total": 35,
     "by_tier": {
       "frontier": 9,
       "efficient": 16,
       "workhorse": 10
     },
-    "benchmark_categories": 403,
+    "benchmark_categories": 406,
     "hysteresis_holds": 0,
     "cap_dropped": 98
   }

@@ -18,7 +18,16 @@
   },
   "models": [
     {
-      "key": "boundless/claude-opus-5.5",
+      "key": "github-copilot/claude-fable-5.2",
+      "or_id": "anthropic/claude-fable-5.2",
+      "hf_id": null,
+      "tier": "frontier",
+      "elo": 1514,
+      "n_cats": 7,
+      "params_b": null
+    },
+    {
+      "key": "cortecs/claude-opus-5.5",
       "or_id": "anthropic/claude-opus-5.5",
       "hf_id": null,
       "tier": "frontier",
@@ -40,7 +49,7 @@
       "or_id": "meta/muse-wonder",
       "hf_id": null,
       "tier": "frontier",
-      "elo": 1432,
+      "elo": 1431,
       "n_cats": 11,
       "params_b": null
     },
@@ -49,7 +58,7 @@
       "or_id": "openai/gpt-6.1-sol",
       "hf_id": null,
       "tier": "frontier",
-      "elo": 1426,
+      "elo": 1425,
       "n_cats": 13,
       "params_b": null
     },
@@ -76,7 +85,7 @@
       "or_id": "meta/muse-spark-1.3",
       "hf_id": null,
       "tier": "frontier",
-      "elo": 1383,
+      "elo": 1381,
       "n_cats": 18,
       "params_b": null
     },
@@ -84,8 +93,8 @@
       "key": "google/gemini-4-argon",
       "or_id": "google/gemini-4-argon",
       "hf_id": null,
-      "tier": "frontier",
-      "elo": 1382,
+      "tier": "efficient",
+      "elo": 1374,
       "n_cats": 10,
       "params_b": null
     },
@@ -94,12 +103,12 @@
       "or_id": "moonshotai/kimi-k3",
       "hf_id": "moonshotai/kimi-k3",
       "tier": "efficient",
-      "elo": 1369,
+      "elo": 1367,
       "n_cats": 19,
       "params_b": null
     },
     {
-      "key": "302ai/glm-5.1",
+      "key": "opencode/glm-5.1",
       "or_id": "z-ai/glm-5.1",
       "hf_id": "z-ai/glm-5.1",
       "tier": "efficient",
@@ -108,20 +117,29 @@
       "params_b": null
     },
     {
+      "key": "google/gemini-4-carbon",
+      "or_id": "google/gemini-4-carbon",
+      "hf_id": null,
+      "tier": "efficient",
+      "elo": 1360,
+      "n_cats": 4,
+      "params_b": null
+    },
+    {
       "key": "anthropic/claude-opus-5",
       "or_id": "anthropic/claude-opus-5",
       "hf_id": null,
       "tier": "efficient",
-      "elo": 1358,
+      "elo": 1354,
       "n_cats": 19,
       "params_b": null
     },
     {
-      "key": "requesty/deepseek-v4.1-flash-1017",
+      "key": "alibaba-token-plan-cn/deepseek-v4.1-flash-1017",
       "or_id": "deepseek/deepseek-v4.1-flash-1017",
       "hf_id": "deepseek/deepseek-v4.1-flash-1017",
       "tier": "efficient",
-      "elo": 1346,
+      "elo": 1344,
       "n_cats": 9,
       "params_b": null
     },
@@ -148,7 +166,7 @@
       "or_id": "anthropic/claude-haiku-5.5",
       "hf_id": null,
       "tier": "efficient",
-      "elo": 1329,
+      "elo": 1328,
       "n_cats": 8,
       "params_b": null
     },
@@ -157,7 +175,7 @@
       "or_id": "meta/muse-spark-1.2",
       "hf_id": null,
       "tier": "efficient",
-      "elo": 1325,
+      "elo": 1326,
       "n_cats": 19,
       "params_b": null
     },
@@ -171,34 +189,16 @@
       "params_b": null
     },
     {
-      "key": "requesty/muse-spark-open",
+      "key": "ollama-cloud/muse-spark-open",
       "or_id": "meta/muse-spark-open",
       "hf_id": "meta/muse-spark-open",
       "tier": "efficient",
-      "elo": 1313,
+      "elo": 1308,
       "n_cats": 5,
       "params_b": null
     },
     {
-      "key": "302ai/grok-4.7",
-      "or_id": "x-ai/grok-4.7",
-      "hf_id": null,
-      "tier": "efficient",
-      "elo": 1309,
-      "n_cats": 11,
-      "params_b": null
-    },
-    {
-      "key": "302ai/glm-5.3",
-      "or_id": "z-ai/glm-5.3",
-      "hf_id": "z-ai/glm-5.3",
-      "tier": "efficient",
-      "elo": 1305,
-      "n_cats": 12,
-      "params_b": null
-    },
-    {
-      "key": "model-oracle-ai/claude-opus-4.8",
+      "key": "github-copilot/claude-opus-4.8",
       "or_id": "anthropic/claude-opus-4.8",
       "hf_id": null,
       "tier": "workhorse",
@@ -207,20 +207,38 @@
       "params_b": null
     },
     {
+      "key": "azure-cognitive-services/grok-4.7",
+      "or_id": "x-ai/grok-4.7",
+      "hf_id": null,
+      "tier": "workhorse",
+      "elo": 1307,
+      "n_cats": 11,
+      "params_b": null
+    },
+    {
       "key": "google/gemini-3.8-flash",
       "or_id": "google/gemini-3.8-flash",
       "hf_id": null,
       "tier": "workhorse",
-      "elo": 1307,
+      "elo": 1306,
       "n_cats": 18,
       "params_b": null
     },
     {
-      "key": "302ai/glm-5.3-flash",
+      "key": "opencode/glm-5.3",
+      "or_id": "z-ai/glm-5.3",
+      "hf_id": "z-ai/glm-5.3",
+      "tier": "workhorse",
+      "elo": 1304,
+      "n_cats": 12,
+      "params_b": null
+    },
+    {
+      "key": "opencode/glm-5.3-flash",
       "or_id": "z-ai/glm-5.3-flash",
       "hf_id": "z-ai/glm-5.3-flash",
       "tier": "workhorse",
-      "elo": 1302,
+      "elo": 1300,
       "n_cats": 8,
       "params_b": null
     },
@@ -229,26 +247,8 @@
       "or_id": "google/gemini-3.6-flash",
       "hf_id": null,
       "tier": "workhorse",
-      "elo": 1294,
+      "elo": 1293,
       "n_cats": 18,
-      "params_b": null
-    },
-    {
-      "key": "302ai/grok-4.6",
-      "or_id": "x-ai/grok-4.6",
-      "hf_id": null,
-      "tier": "workhorse",
-      "elo": 1289,
-      "n_cats": 20,
-      "params_b": null
-    },
-    {
-      "key": "anthropic/claude-opus-4.6",
-      "or_id": "anthropic/claude-opus-4.6",
-      "hf_id": null,
-      "tier": "workhorse",
-      "elo": 1288,
-      "n_cats": 17,
       "params_b": null
     },
     {
@@ -256,16 +256,16 @@
       "or_id": "deepseek/deepseek-v4-flash",
       "hf_id": "deepseek/deepseek-v4-flash",
       "tier": "efficient",
-      "elo": 1204,
+      "elo": 1202,
       "n_cats": 8,
       "params_b": null
     },
     {
-      "key": "neon/llama-4-maverick",
+      "key": "digitalocean/llama-4-maverick",
       "or_id": "meta-llama/llama-4-maverick",
       "hf_id": "meta-llama/llama-4-maverick",
       "tier": "workhorse",
-      "elo": 894,
+      "elo": 892,
       "n_cats": 6,
       "params_b": null
     },
@@ -334,15 +334,15 @@
     }
   ],
   "_meta": {
-    "generated": "2026-11-11T11:00:10.619720+00:00",
+    "generated": "2026-11-12T11:00:08.955708+00:00",
     "total": 35,
     "by_tier": {
       "frontier": 9,
       "efficient": 16,
       "workhorse": 10
     },
-    "benchmark_categories": 407,
+    "benchmark_categories": 381,
     "hysteresis_holds": 0,
-    "cap_dropped": 98
+    "cap_dropped": 100
   }
 }

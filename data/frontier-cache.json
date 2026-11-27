@@ -5,62 +5,62 @@
    "benchmark_count": 11,
    "benchmarks": {
     "design_arena/3d": {
-     "elo": 1509,
+     "elo": 1512,
      "rank": 1,
-     "win_rate": 75.3
+     "win_rate": 75.6
     },
     "design_arena/codecategories": {
-     "elo": 1459,
+     "elo": 1458,
      "rank": 1,
      "win_rate": 66
     },
     "design_arena/codetovideo": {
-     "elo": 1445,
+     "elo": 1439,
      "rank": 1,
-     "win_rate": 82.8
+     "win_rate": 82.1
     },
     "design_arena/fullstack": {
-     "elo": 1472,
+     "elo": 1470,
      "rank": 1,
-     "win_rate": 72.9
+     "win_rate": 72.7
     },
     "design_arena/gamedev": {
-     "elo": 1540,
+     "elo": 1539,
      "rank": 1,
      "win_rate": 79.4
     },
     "design_arena/mobileapps": {
-     "elo": 1323,
+     "elo": 1324,
      "rank": 2,
-     "win_rate": 65.1
+     "win_rate": 65.2
     },
     "design_arena/pdf": {
-     "elo": 1317,
+     "elo": 1316,
      "rank": 2,
      "win_rate": 67.4
     },
     "design_arena/spreadsheet": {
-     "elo": 1416,
+     "elo": 1420,
      "rank": 1,
      "win_rate": 73.7
     },
     "design_arena/uicomponent": {
-     "elo": 1395,
+     "elo": 1392,
      "rank": 1,
      "win_rate": 65.8
     },
     "design_arena/webapps": {
-     "elo": 1340,
+     "elo": 1341,
      "rank": 1,
-     "win_rate": 65.4
+     "win_rate": 65.5
     },
     "design_arena/website": {
-     "elo": 1404,
+     "elo": 1405,
      "rank": 3,
      "win_rate": 60.9
     }
    },
-   "best_elo": 1540,
+   "best_elo": 1539,
    "context": 1000000,
    "hf_id": null,
    "key": "github-copilot/claude-fable-5.2",
@@ -76,42 +76,42 @@
    "benchmark_count": 7,
    "benchmarks": {
     "design_arena/3d": {
-     "elo": 1489,
+     "elo": 1486,
      "rank": 2,
-     "win_rate": 75.7
+     "win_rate": 75.4
     },
     "design_arena/codecategories": {
-     "elo": 1441,
+     "elo": 1434,
      "rank": 4,
-     "win_rate": 64.3
+     "win_rate": 63.5
     },
     "design_arena/dataviz": {
-     "elo": 1309,
-     "rank": 14,
-     "win_rate": 60.8
+     "elo": 1313,
+     "rank": 13,
+     "win_rate": 61.5
     },
     "design_arena/gamedev": {
-     "elo": 1400,
+     "elo": 1396,
      "rank": 5,
-     "win_rate": 65.4
+     "win_rate": 65
     },
     "design_arena/pdf": {
-     "elo": 1269,
+     "elo": 1268,
      "rank": 6,
-     "win_rate": 60.4
+     "win_rate": 59.6
     },
     "design_arena/uicomponent": {
-     "elo": 1343,
+     "elo": 1341,
      "rank": 8,
-     "win_rate": 58.8
+     "win_rate": 58.6
     },
     "design_arena/website": {
-     "elo": 1389,
-     "rank": 4,
-     "win_rate": 59.1
+     "elo": 1382,
+     "rank": 5,
+     "win_rate": 58.1
     }
    },
-   "best_elo": 1489,
+   "best_elo": 1486,
    "context": 1048576,
    "hf_id": null,
    "key": "google/gemini-4-neon",
@@ -127,29 +127,29 @@
    "benchmark_count": 11,
    "benchmarks": {
     "design_arena/3d": {
-     "elo": 1469,
+     "elo": 1471,
      "rank": 3,
-     "win_rate": 74.1
+     "win_rate": 74.2
     },
     "design_arena/codecategories": {
-     "elo": 1434,
+     "elo": 1433,
      "rank": 5,
      "win_rate": 63.8
     },
     "design_arena/codetovideo": {
-     "elo": 1254,
+     "elo": 1256,
      "rank": 6,
-     "win_rate": 61.6
+     "win_rate": 61.7
     },
     "design_arena/dataviz": {
-     "elo": 1340,
-     "rank": 7,
-     "win_rate": 61.5
+     "elo": 1359,
+     "rank": 4,
+     "win_rate": 63.7
     },
     "design_arena/gamedev": {
-     "elo": 1404,
+     "elo": 1406,
      "rank": 4,
-     "win_rate": 66.8
+     "win_rate": 67.1
     },
     "design_arena/mobileapps": {
      "elo": 1293,
@@ -157,12 +157,12 @@
      "win_rate": 60.7
     },
     "design_arena/pdf": {
-     "elo": 1345,
+     "elo": 1344,
      "rank": 1,
-     "win_rate": 71.6
+     "win_rate": 71.4
     },
     "design_arena/spreadsheet": {
-     "elo": 1224,
+     "elo": 1228,
      "rank": 13,
      "win_rate": 49.4
     },
@@ -172,89 +172,23 @@
      "win_rate": 70.3
     },
     "design_arena/uicomponent": {
-     "elo": 1380,
-     "rank": 2,
-     "win_rate": 64.9
+     "elo": 1367,
+     "rank": 4,
+     "win_rate": 62.9
     },
     "design_arena/website": {
-     "elo": 1379,
+     "elo": 1381,
      "rank": 6,
-     "win_rate": 58.1
+     "win_rate": 58.2
     }
    },
-   "best_elo": 1469,
+   "best_elo": 1471,
    "context": 1048576,
    "hf_id": null,
    "key": "google/gemini-4-carbon",
    "knowledge_cutoff": null,
    "model_id": "gemini-4-carbon",
    "or_id": "google/gemini-4-carbon",
-   "params_b": null,
-   "provider": "google",
-   "tier": "frontier"
-  },
-  {
-   "arch_modality": "text+image+file+audio+video->text",
-   "benchmark_count": 10,
-   "benchmarks": {
-    "design_arena/3d": {
-     "elo": 1399,
-     "rank": 8,
-     "win_rate": 66.3
-    },
-    "design_arena/asciiart": {
-     "elo": 1454,
-     "rank": 1,
-     "win_rate": 73
-    },
-    "design_arena/codecategories": {
-     "elo": 1388,
-     "rank": 12,
-     "win_rate": 55.8
-    },
-    "design_arena/codetovideo": {
-     "elo": 1310,
-     "rank": 4,
-     "win_rate": 68.7
-    },
-    "design_arena/dataviz": {
-     "elo": 1289,
-     "rank": 19,
-     "win_rate": 55
-    },
-    "design_arena/gamedev": {
-     "elo": 1338,
-     "rank": 12,
-     "win_rate": 52.2
-    },
-    "design_arena/mobileapps": {
-     "elo": 1275,
-     "rank": 5,
-     "win_rate": 57.8
-    },
-    "design_arena/pdf": {
-     "elo": 1271,
-     "rank": 5,
-     "win_rate": 62.3
-    },
-    "design_arena/uicomponent": {
-     "elo": 1329,
-     "rank": 12,
-     "win_rate": 53.1
-    },
-    "design_arena/website": {
-     "elo": 1374,
-     "rank": 9,
-     "win_rate": 58.2
-    }
-   },
-   "best_elo": 1454,
-   "context": 1048576,
-   "hf_id": null,
-   "key": "google/gemini-4-hydrogen",
-   "knowledge_cutoff": null,
-   "model_id": "gemini-4-hydrogen",
-   "or_id": "google/gemini-4-hydrogen",
    "params_b": null,
    "provider": "google",
    "tier": "frontier"
@@ -271,7 +205,7 @@
     "design_arena/androidnative": {
      "elo": 1401,
      "rank": 1,
-     "win_rate": 75.6
+     "win_rate": 75.7
     },
     "design_arena/asciiart": {
      "elo": 1345,
@@ -279,7 +213,7 @@
      "win_rate": 63.3
     },
     "design_arena/blender3d": {
-     "elo": 1220,
+     "elo": 1219,
      "rank": 4,
      "win_rate": 57.3
     },
@@ -289,9 +223,9 @@
      "win_rate": 61.6
     },
     "design_arena/codetovideo": {
-     "elo": 1331,
+     "elo": 1332,
      "rank": 2,
-     "win_rate": 73.5
+     "win_rate": 73.3
     },
     "design_arena/dataviz": {
      "elo": 1380,
@@ -299,14 +233,14 @@
      "win_rate": 63.6
     },
     "design_arena/fullstack": {
-     "elo": 1453,
+     "elo": 1454,
      "rank": 2,
-     "win_rate": 70.2
+     "win_rate": 70
     },
     "design_arena/gamedev": {
      "elo": 1438,
      "rank": 2,
-     "win_rate": 66.7
+     "win_rate": 66.8
     },
     "design_arena/mobileapps": {
      "elo": 1296,
@@ -314,45 +248,111 @@
      "win_rate": 61.7
     },
     "design_arena/pdf": {
-     "elo": 1303,
+     "elo": 1304,
      "rank": 3,
      "win_rate": 66.8
     },
     "design_arena/spreadsheet": {
-     "elo": 1289,
+     "elo": 1293,
      "rank": 6,
      "win_rate": 53.1
     },
     "design_arena/svg": {
      "elo": 1370,
-     "rank": 5,
+     "rank": 4,
      "win_rate": 54.3
     },
     "design_arena/uicomponent": {
-     "elo": 1366,
-     "rank": 5,
-     "win_rate": 62.4
+     "elo": 1367,
+     "rank": 3,
+     "win_rate": 62.6
     },
     "design_arena/webapps": {
-     "elo": 1306,
+     "elo": 1308,
      "rank": 3,
-     "win_rate": 62.3
+     "win_rate": 62.4
     },
     "design_arena/website": {
-     "elo": 1375,
+     "elo": 1376,
      "rank": 8,
-     "win_rate": 55.7
+     "win_rate": 55.8
     }
    },
-   "best_elo": 1453,
+   "best_elo": 1454,
    "context": 1000000,
    "hf_id": null,
-   "key": "jzstoken/claude-opus-5.5",
+   "key": "github-copilot/claude-opus-5.5",
    "knowledge_cutoff": null,
    "model_id": "claude-opus-5.5",
    "or_id": "anthropic/claude-opus-5.5",
    "params_b": null,
-   "provider": "jzstoken",
+   "provider": "github-copilot",
+   "tier": "frontier"
+  },
+  {
+   "arch_modality": "text+image+file+audio+video->text",
+   "benchmark_count": 10,
+   "benchmarks": {
+    "design_arena/3d": {
+     "elo": 1400,
+     "rank": 8,
+     "win_rate": 66.5
+    },
+    "design_arena/asciiart": {
+     "elo": 1454,
+     "rank": 1,
+     "win_rate": 73
+    },
+    "design_arena/codecategories": {
+     "elo": 1388,
+     "rank": 12,
+     "win_rate": 56
+    },
+    "design_arena/codetovideo": {
+     "elo": 1309,
+     "rank": 4,
+     "win_rate": 68.2
+    },
+    "design_arena/dataviz": {
+     "elo": 1289,
+     "rank": 19,
+     "win_rate": 55
+    },
+    "design_arena/gamedev": {
+     "elo": 1338,
+     "rank": 12,
+     "win_rate": 52.4
+    },
+    "design_arena/mobileapps": {
+     "elo": 1275,
+     "rank": 5,
+     "win_rate": 57.9
+    },
+    "design_arena/pdf": {
+     "elo": 1266,
+     "rank": 8,
+     "win_rate": 61.3
+    },
+    "design_arena/uicomponent": {
+     "elo": 1328,
+     "rank": 12,
+     "win_rate": 53.5
+    },
+    "design_arena/website": {
+     "elo": 1374,
+     "rank": 9,
+     "win_rate": 58.1
+    }
+   },
+   "best_elo": 1454,
+   "context": 1048576,
+   "hf_id": null,
+   "key": "google/gemini-4-hydrogen",
+   "knowledge_cutoff": null,
+   "model_id": "gemini-4-hydrogen",
+   "or_id": "google/gemini-4-hydrogen",
+   "params_b": null,
+   "provider": "google",
    "tier": "frontier"
   },
   {
@@ -367,22 +367,22 @@
     "design_arena/blender3d": {
      "elo": 1121,
      "rank": 10,
-     "win_rate": 36.1
+     "win_rate": 36.3
     },
     "design_arena/codecategories": {
      "elo": 1445,
      "rank": 2,
-     "win_rate": 62.4
+     "win_rate": 62.5
     },
     "design_arena/codetovideo": {
-     "elo": 1186,
+     "elo": 1190,
      "rank": 13,
-     "win_rate": 53.7
+     "win_rate": 53.9
     },
     "design_arena/dataviz": {
-     "elo": 1300,
-     "rank": 17,
-     "win_rate": 57.1
+     "elo": 1294,
+     "rank": 18,
+     "win_rate": 56.5
     },
     "design_arena/gamedev": {
      "elo": 1395,
@@ -397,48 +397,48 @@
     "design_arena/mobileapps": {
      "elo": 1240,
      "rank": 12,
-     "win_rate": 51.6
+     "win_rate": 51.4
     },
     "design_arena/pdf": {
-     "elo": 1199,
-     "rank": 22,
-     "win_rate": 51.6
+     "elo": 1195,
+     "rank": 21,
+     "win_rate": 51.2
     },
     "design_arena/python-pptxslides": {
-     "elo": 1036,
+     "elo": 1035,
      "rank": 30,
      "win_rate": 15
     },
     "design_arena/spreadsheet": {
-     "elo": 1231,
+     "elo": 1236,
      "rank": 12,
      "win_rate": 43.4
     },
     "design_arena/svg": {
-     "elo": 1345,
+     "elo": 1343,
      "rank": 10,
-     "win_rate": 55.3
+     "win_rate": 54.9
     },
     "design_arena/uicomponent": {
-     "elo": 1360,
+     "elo": 1361,
      "rank": 6,
-     "win_rate": 62
+     "win_rate": 62.1
     },
     "design_arena/website": {
-     "elo": 1426,
+     "elo": 1427,
      "rank": 1,
-     "win_rate": 63.7
+     "win_rate": 63.8
     }
    },
    "best_elo": 1445,
    "context": 1048576,
    "hf_id": null,
-   "key": "concentrate/muse-wonder",
+   "key": "venice/muse-wonder",
    "knowledge_cutoff": null,
    "model_id": "muse-wonder",
    "or_id": "meta/muse-wonder",
    "params_b": null,
-   "provider": "concentrate",
+   "provider": "venice",
    "tier": "frontier"
   },
   {
@@ -446,34 +446,34 @@
    "benchmark_count": 16,
    "benchmarks": {
     "design_arena/3d": {
-     "elo": 1395,
+     "elo": 1396,
      "rank": 9,
-     "win_rate": 56.3
+     "win_rate": 56.5
     },
     "design_arena/androidnative": {
-     "elo": 1264,
+     "elo": 1262,
      "rank": 6,
-     "win_rate": 58.1
+     "win_rate": 57.9
     },
     "design_arena/asciiart": {
-     "elo": 1406,
+     "elo": 1405,
      "rank": 2,
-     "win_rate": 71.2
+     "win_rate": 71
     },
     "design_arena/blender3d": {
      "elo": 1231,
      "rank": 3,
-     "win_rate": 59.4
+     "win_rate": 59.3
     },
     "design_arena/codecategories": {
-     "elo": 1417,
+     "elo": 1416,
      "rank": 6,
      "win_rate": 58
     },
     "design_arena/codetovideo": {
-     "elo": 1316,
+     "elo": 1318,
      "rank": 3,
-     "win_rate": 70.9
+     "win_rate": 70.8
     },
     "design_arena/dataviz": {
      "elo": 1364,
@@ -481,60 +481,60 @@
      "win_rate": 64.6
     },
     "design_arena/fullstack": {
-     "elo": 1418,
+     "elo": 1420,
      "rank": 3,
-     "win_rate": 62.7
+     "win_rate": 63
     },
     "design_arena/gamedev": {
-     "elo": 1429,
+     "elo": 1427,
      "rank": 3,
-     "win_rate": 65
+     "win_rate": 64.9
     },
     "design_arena/mobileapps": {
-     "elo": 1259,
+     "elo": 1258,
      "rank": 7,
      "win_rate": 57.1
     },
     "design_arena/pdf": {
-     "elo": 1250,
+     "elo": 1249,
      "rank": 12,
-     "win_rate": 58.8
+     "win_rate": 58.5
     },
     "design_arena/spreadsheet": {
-     "elo": 1250,
+     "elo": 1254,
      "rank": 10,
      "win_rate": 46.3
     },
     "design_arena/svg": {
      "elo": 1346,
      "rank": 9,
-     "win_rate": 55.3
+     "win_rate": 55.5
     },
     "design_arena/uicomponent": {
-     "elo": 1375,
-     "rank": 3,
+     "elo": 1373,
+     "rank": 2,
      "win_rate": 62
     },
     "design_arena/webapps": {
-     "elo": 1289,
+     "elo": 1291,
      "rank": 5,
-     "win_rate": 59.1
+     "win_rate": 59.3
     },
     "design_arena/website": {
-     "elo": 1358,
+     "elo": 1359,
      "rank": 13,
-     "win_rate": 53.5
+     "win_rate": 53.6
     }
    },
-   "best_elo": 1429,
+   "best_elo": 1427,
    "context": 1000000,
    "hf_id": null,
-   "key": "jzstoken/claude-sonnet-5.5",
+   "key": "github-copilot/claude-sonnet-5.5",
    "knowledge_cutoff": null,
    "model_id": "claude-sonnet-5.5",
    "or_id": "anthropic/claude-sonnet-5.5",
    "params_b": null,
-   "provider": "jzstoken",
+   "provider": "github-copilot",
    "tier": "frontier"
   },
   {
@@ -542,9 +542,9 @@
    "benchmark_count": 16,
    "benchmarks": {
     "design_arena/3d": {
-     "elo": 1422,
+     "elo": 1421,
      "rank": 5,
-     "win_rate": 68.2
+     "win_rate": 68.3
     },
     "design_arena/androidnative": {
      "elo": 1164,
@@ -552,17 +552,17 @@
      "win_rate": 45
     },
     "design_arena/asciiart": {
-     "elo": 1294,
+     "elo": 1287,
      "rank": 9,
-     "win_rate": 57
+     "win_rate": 56.6
     },
     "design_arena/codecategories": {
      "elo": 1400,
-     "rank": 11,
-     "win_rate": 59.4
+     "rank": 10,
+     "win_rate": 59.5
     },
     "design_arena/codetovideo": {
-     "elo": 1222,
+     "elo": 1225,
      "rank": 10,
      "win_rate": 58.7
     },
@@ -572,22 +572,22 @@
      "win_rate": 56.5
     },
     "design_arena/fullstack": {
-     "elo": 1390,
+     "elo": 1391,
      "rank": 4,
      "win_rate": 61.3
     },
     "design_arena/gamedev": {
      "elo": 1378,
      "rank": 8,
-     "win_rate": 61.7
+     "win_rate": 61.8
     },
     "design_arena/mobileapps": {
-     "elo": 1271,
+     "elo": 1270,
      "rank": 6,
      "win_rate": 59.6
     },
     "design_arena/pdf": {
-     "elo": 1235,
+     "elo": 1237,
      "rank": 16,
      "win_rate": 57.9
     },
@@ -597,19 +597,19 @@
      "win_rate": 60.6
     },
     "design_arena/spreadsheet": {
-     "elo": 1315,
-     "rank": 5,
+     "elo": 1319,
+     "rank": 4,
      "win_rate": 62.5
     },
     "design_arena/svg": {
-     "elo": 1371,
-     "rank": 4,
-     "win_rate": 61.1
+     "elo": 1370,
+     "rank": 5,
+     "win_rate": 61
     },
     "design_arena/uicomponent": {
-     "elo": 1368,
-     "rank": 4,
-     "win_rate": 63
+     "elo": 1364,
+     "rank": 5,
+     "win_rate": 62.6
     },
     "design_arena/webapps": {
      "elo": 1295,
@@ -617,12 +617,12 @@
      "win_rate": 60.4
     },
     "design_arena/website": {
-     "elo": 1366,
+     "elo": 1367,
      "rank": 10,
      "win_rate": 57.2
     }
    },
-   "best_elo": 1422,
+   "best_elo": 1421,
    "context": 1048576,
    "hf_id": "moonshotai/kimi-k3.1-pro",
    "key": "moonshotai/kimi-k3.1-pro",
@@ -638,9 +638,9 @@
    "benchmark_count": 15,
    "benchmarks": {
     "design_arena/3d": {
-     "elo": 1415,
+     "elo": 1416,
      "rank": 7,
-     "win_rate": 59.4
+     "win_rate": 59.6
     },
     "design_arena/androidnative": {
      "elo": 1190,
@@ -653,29 +653,29 @@
      "win_rate": 60.1
     },
     "design_arena/codecategories": {
-     "elo": 1413,
+     "elo": 1412,
      "rank": 7,
      "win_rate": 56.5
     },
     "design_arena/codetovideo": {
-     "elo": 1171,
+     "elo": 1174,
      "rank": 15,
-     "win_rate": 54
+     "win_rate": 53.9
     },
     "design_arena/dataviz": {
-     "elo": 1278,
-     "rank": 23,
-     "win_rate": 52.5
+     "elo": 1275,
+     "rank": 25,
+     "win_rate": 52.2
     },
     "design_arena/fullstack": {
-     "elo": 1297,
+     "elo": 1299,
      "rank": 12,
      "win_rate": 47.7
     },
     "design_arena/gamedev": {
      "elo": 1386,
      "rank": 7,
-     "win_rate": 58.2
+     "win_rate": 58.3
     },
     "design_arena/mobileapps": {
      "elo": 1228,
@@ -683,24 +683,24 @@
      "win_rate": 52.5
     },
     "design_arena/pdf": {
-     "elo": 1142,
-     "rank": 34,
-     "win_rate": 44.5
+     "elo": 1137,
+     "rank": 37,
+     "win_rate": 43.6
     },
     "design_arena/spreadsheet": {
-     "elo": 1207,
+     "elo": 1211,
      "rank": 14,
-     "win_rate": 41.3
+     "win_rate": 41.1
     },
     "design_arena/svg": {
-     "elo": 1400,
+     "elo": 1402,
      "rank": 2,
-     "win_rate": 61.1
+     "win_rate": 61.3
     },
     "design_arena/uicomponent": {
      "elo": 1355,
      "rank": 7,
-     "win_rate": 58.7
+     "win_rate": 58.8
     },
     "design_arena/webapps": {
      "elo": 1270,
@@ -713,7 +713,7 @@
      "win_rate": 54.1
     }
    },
-   "best_elo": 1415,
+   "best_elo": 1416,
    "context": 1050000,
    "hf_id": null,
    "key": "openai/gpt-6.1-sol",
@@ -725,99 +725,23 @@
    "tier": "efficient"
   },
   {
-   "arch_modality": "text+image+file->text",
-   "benchmark_count": 12,
-   "benchmarks": {
-    "design_arena/3d": {
-     "elo": 1234,
-     "rank": 32,
-     "win_rate": 46.5
-    },
-    "design_arena/blender3d": {
-     "elo": 1163,
-     "rank": 6,
-     "win_rate": 60
-    },
-    "design_arena/codecategories": {
-     "elo": 1318,
-     "rank": 34,
-     "win_rate": 47.4
-    },
-    "design_arena/codetovideo": {
-     "elo": 1093,
-     "rank": 24,
-     "win_rate": 42.1
-    },
-    "design_arena/dataviz": {
-     "elo": 1217,
-     "rank": 55,
-     "win_rate": 43.8
-    },
-    "design_arena/gamedev": {
-     "elo": 1291,
-     "rank": 21,
-     "win_rate": 50.6
-    },
-    "design_arena/mobileapps": {
-     "elo": 1247,
-     "rank": 11,
-     "win_rate": 53.6
-    },
-    "design_arena/pdf": {
-     "elo": 1188,
-     "rank": 25,
-     "win_rate": 50
-    },
-    "design_arena/spreadsheet": {
-     "elo": 1411,
-     "rank": 2,
-     "win_rate": 72.5
-    },
-    "design_arena/svg": {
-     "elo": 1310,
-     "rank": 19,
-     "win_rate": 49.2
-    },
-    "design_arena/uicomponent": {
-     "elo": 1275,
-     "rank": 29,
-     "win_rate": 50.1
-    },
-    "design_arena/website": {
-     "elo": 1292,
-     "rank": 50,
-     "win_rate": 45.6
-    }
-   },
-   "best_elo": 1411,
-   "context": 500000,
-   "hf_id": null,
-   "key": "steadyrouter/grok-4.7",
-   "knowledge_cutoff": null,
-   "model_id": "grok-4.7",
-   "or_id": "x-ai/grok-4.7",
-   "params_b": null,
-   "provider": "steadyrouter",
-   "tier": "efficient"
-  },
-  {
    "arch_modality": "text+image+file+video->text",
    "benchmark_count": 18,
    "benchmarks": {
     "design_arena/3d": {
-     "elo": 1363,
+     "elo": 1364,
      "rank": 11,
      "win_rate": 63.1
     },
     "design_arena/androidnative": {
-     "elo": 1284,
+     "elo": 1282,
      "rank": 2,
-     "win_rate": 63.3
+     "win_rate": 63
     },
     "design_arena/asciiart": {
-     "elo": 1333,
+     "elo": 1328,
      "rank": 6,
-     "win_rate": 61.8
+     "win_rate": 61.1
     },
     "design_arena/blender3d": {
      "elo": 1145,
@@ -825,12 +749,12 @@
      "win_rate": 56.3
     },
     "design_arena/codecategories": {
-     "elo": 1405,
+     "elo": 1404,
      "rank": 9,
      "win_rate": 57.8
     },
     "design_arena/codetovideo": {
-     "elo": 1191,
+     "elo": 1194,
      "rank": 11,
      "win_rate": 54.1
     },
@@ -840,29 +764,29 @@
      "win_rate": 58.4
     },
     "design_arena/fullstack": {
-     "elo": 1359,
+     "elo": 1360,
      "rank": 7,
      "win_rate": 60.8
     },
     "design_arena/gamedev": {
-     "elo": 1328,
+     "elo": 1327,
      "rank": 13,
      "win_rate": 56.1
     },
     "design_arena/godotgamedev": {
      "elo": 1208,
      "rank": 9,
-     "win_rate": 45.7
+     "win_rate": 45.8
     },
     "design_arena/mobileapps": {
-     "elo": 1214,
+     "elo": 1213,
      "rank": 19,
-     "win_rate": 49.8
+     "win_rate": 49.7
     },
     "design_arena/pdf": {
-     "elo": 1200,
+     "elo": 1198,
      "rank": 20,
-     "win_rate": 52.6
+     "win_rate": 52.2
     },
     "design_arena/python-pptxslides": {
      "elo": 1211,
@@ -870,19 +794,19 @@
      "win_rate": 50.8
     },
     "design_arena/spreadsheet": {
-     "elo": 1126,
+     "elo": 1130,
      "rank": 17,
-     "win_rate": 29.1
+     "win_rate": 29.4
     },
     "design_arena/svg": {
      "elo": 1358,
      "rank": 6,
-     "win_rate": 54.6
+     "win_rate": 54.7
     },
     "design_arena/uicomponent": {
-     "elo": 1342,
+     "elo": 1340,
      "rank": 9,
-     "win_rate": 58.1
+     "win_rate": 58
     },
     "design_arena/webapps": {
      "elo": 1276,
@@ -890,12 +814,12 @@
      "win_rate": 55.6
     },
     "design_arena/website": {
-     "elo": 1408,
+     "elo": 1409,
      "rank": 2,
      "win_rate": 59.3
     }
    },
-   "best_elo": 1408,
+   "best_elo": 1409,
    "context": 1048576,
    "hf_id": null,
    "key": "meta/muse-spark-1.3",
@@ -941,14 +865,14 @@
      "win_rate": 60.5
     },
     "design_arena/codetovideo": {
-     "elo": 1261,
+     "elo": 1264,
      "rank": 5,
-     "win_rate": 63
+     "win_rate": 63.2
     },
     "design_arena/dataviz": {
-     "elo": 1345,
-     "rank": 4,
-     "win_rate": 63.4
+     "elo": 1346,
+     "rank": 6,
+     "win_rate": 63.5
     },
     "design_arena/fullstack": {
      "elo": 1360,
@@ -958,7 +882,7 @@
     "design_arena/gamedev": {
      "elo": 1342,
      "rank": 11,
-     "win_rate": 55.6
+     "win_rate": 55.7
     },
     "design_arena/godotgamedev": {
      "elo": 1193,
@@ -971,13 +895,13 @@
      "win_rate": 55.6
     },
     "design_arena/mobileapps": {
-     "elo": 1256,
+     "elo": 1255,
      "rank": 10,
      "win_rate": 56.5
     },
     "design_arena/pdf": {
-     "elo": 1260,
-     "rank": 11,
+     "elo": 1263,
+     "rank": 9,
      "win_rate": 62.6
     },
     "design_arena/python-pptxslides": {
@@ -986,19 +910,19 @@
      "win_rate": 53.9
     },
     "design_arena/spreadsheet": {
-     "elo": 1052,
-     "rank": 18,
-     "win_rate": 27.7
+     "elo": 1055,
+     "rank": 19,
+     "win_rate": 27.5
     },
     "design_arena/svg": {
-     "elo": 1351,
+     "elo": 1350,
      "rank": 8,
      "win_rate": 59.8
     },
     "design_arena/uicomponent": {
      "elo": 1339,
      "rank": 10,
-     "win_rate": 61.1
+     "win_rate": 61
     },
     "design_arena/webapps": {
      "elo": 1267,
@@ -1006,8 +930,8 @@
      "win_rate": 58.1
     },
     "design_arena/website": {
-     "elo": 1388,
-     "rank": 5,
+     "elo": 1389,
+     "rank": 4,
      "win_rate": 59.8
     }
    },
@@ -1023,6 +947,82 @@
    "tier": "efficient"
   },
   {
+   "arch_modality": "text+image+file->text",
+   "benchmark_count": 12,
+   "benchmarks": {
+    "design_arena/3d": {
+     "elo": 1234,
+     "rank": 32,
+     "win_rate": 46.5
+    },
+    "design_arena/blender3d": {
+     "elo": 1163,
+     "rank": 6,
+     "win_rate": 60
+    },
+    "design_arena/codecategories": {
+     "elo": 1318,
+     "rank": 33,
+     "win_rate": 47.4
+    },
+    "design_arena/codetovideo": {
+     "elo": 1094,
+     "rank": 24,
+     "win_rate": 41.9
+    },
+    "design_arena/dataviz": {
+     "elo": 1217,
+     "rank": 55,
+     "win_rate": 43.8
+    },
+    "design_arena/gamedev": {
+     "elo": 1291,
+     "rank": 21,
+     "win_rate": 50.6
+    },
+    "design_arena/mobileapps": {
+     "elo": 1247,
+     "rank": 11,
+     "win_rate": 53.6
+    },
+    "design_arena/pdf": {
+     "elo": 1192,
+     "rank": 22,
+     "win_rate": 50.5
+    },
+    "design_arena/spreadsheet": {
+     "elo": 1406,
+     "rank": 2,
+     "win_rate": 72.2
+    },
+    "design_arena/svg": {
+     "elo": 1309,
+     "rank": 19,
+     "win_rate": 49.2
+    },
+    "design_arena/uicomponent": {
+     "elo": 1275,
+     "rank": 29,
+     "win_rate": 50.3
+    },
+    "design_arena/website": {
+     "elo": 1293,
+     "rank": 50,
+     "win_rate": 45.6
+    }
+   },
+   "best_elo": 1406,
+   "context": 500000,
+   "hf_id": null,
+   "key": "github-copilot/grok-4.7",
+   "knowledge_cutoff": null,
+   "model_id": "grok-4.7",
+   "or_id": "x-ai/grok-4.7",
+   "params_b": null,
+   "provider": "github-copilot",
+   "tier": "efficient"
+  },
+  {
    "arch_modality": "text+image+file+audio+video->text",
    "benchmark_count": 6,
    "benchmarks": {
@@ -1032,13 +1032,13 @@
      "win_rate": 61.5
     },
     "design_arena/codecategories": {
-     "elo": 1400,
-     "rank": 10,
+     "elo": 1399,
+     "rank": 11,
      "win_rate": 60.6
     },
     "design_arena/dataviz": {
-     "elo": 1314,
-     "rank": 13,
+     "elo": 1313,
+     "rank": 14,
      "win_rate": 60.1
     },
     "design_arena/gamedev": {
@@ -1052,12 +1052,12 @@
      "win_rate": 55.8
     },
     "design_arena/website": {
-     "elo": 1378,
+     "elo": 1379,
      "rank": 7,
      "win_rate": 59.5
     }
    },
-   "best_elo": 1400,
+   "best_elo": 1399,
    "context": 1048576,
    "hf_id": null,
    "key": "concentrate/muse-ember",
@@ -1083,13 +1083,13 @@
      "win_rate": 65.7
     },
     "design_arena/codecategories": {
-     "elo": 1383,
+     "elo": 1382,
      "rank": 13,
      "win_rate": 57.5
     },
     "design_arena/dataviz": {
      "elo": 1342,
-     "rank": 6,
+     "rank": 7,
      "win_rate": 62.4
     },
     "design_arena/fullstack": {
@@ -1098,12 +1098,12 @@
      "win_rate": 57.1
     },
     "design_arena/gamedev": {
-     "elo": 1349,
-     "rank": 9,
+     "elo": 1348,
+     "rank": 10,
      "win_rate": 59.5
     },
     "design_arena/godotgamedev": {
-     "elo": 1295,
+     "elo": 1294,
      "rank": 1,
      "win_rate": 60.7
     },
@@ -1113,7 +1113,7 @@
      "win_rate": 56.4
     },
     "design_arena/mobileapps": {
-     "elo": 1256,
+     "elo": 1255,
      "rank": 9,
      "win_rate": 56.3
     },
@@ -1123,7 +1123,7 @@
      "win_rate": 62.1
     },
     "design_arena/spreadsheet": {
-     "elo": 1342,
+     "elo": 1346,
      "rank": 3,
      "win_rate": 58.8
     },
@@ -1133,7 +1133,7 @@
      "win_rate": 56.6
     },
     "design_arena/uicomponent": {
-     "elo": 1326,
+     "elo": 1325,
      "rank": 14,
      "win_rate": 59.9
     },
@@ -1151,12 +1151,12 @@
    "best_elo": 1393,
    "context": 1000000,
    "hf_id": null,
-   "key": "korouter/claude-fable-5.1",
+   "key": "github-copilot/claude-fable-5.1",
    "knowledge_cutoff": null,
    "model_id": "claude-fable-5.1",
    "or_id": "anthropic/claude-fable-5.1",
    "params_b": null,
-   "provider": "korouter",
+   "provider": "github-copilot",
    "tier": "efficient"
   },
   {
@@ -1164,7 +1164,7 @@
    "benchmark_count": 14,
    "benchmarks": {
     "design_arena/3d": {
-     "elo": 1341,
+     "elo": 1342,
      "rank": 14,
      "win_rate": 50.2
     },
@@ -1181,47 +1181,47 @@
     "design_arena/codecategories": {
      "elo": 1380,
      "rank": 14,
-     "win_rate": 53.5
+     "win_rate": 53.6
     },
     "design_arena/codetovideo": {
-     "elo": 1226,
+     "elo": 1231,
      "rank": 9,
-     "win_rate": 58.4
+     "win_rate": 58.7
     },
     "design_arena/dataviz": {
      "elo": 1319,
      "rank": 12,
-     "win_rate": 59.8
+     "win_rate": 59.9
     },
     "design_arena/gamedev": {
      "elo": 1349,
-     "rank": 10,
-     "win_rate": 53.3
+     "rank": 9,
+     "win_rate": 53.5
     },
     "design_arena/mobileapps": {
-     "elo": 1235,
+     "elo": 1238,
      "rank": 13,
-     "win_rate": 49.4
+     "win_rate": 50.3
     },
     "design_arena/pdf": {
-     "elo": 1261,
+     "elo": 1262,
      "rank": 10,
-     "win_rate": 59.4
+     "win_rate": 59.6
     },
     "design_arena/spreadsheet": {
-     "elo": 1146,
+     "elo": 1151,
      "rank": 16,
-     "win_rate": 28.8
+     "win_rate": 28.7
     },
     "design_arena/svg": {
-     "elo": 1388,
+     "elo": 1386,
      "rank": 3,
-     "win_rate": 62
+     "win_rate": 61.7
     },
     "design_arena/uicomponent": {
-     "elo": 1323,
-     "rank": 16,
-     "win_rate": 56.8
+     "elo": 1324,
+     "rank": 15,
+     "win_rate": 56.9
     },
     "design_arena/webapps": {
      "elo": 1276,
@@ -1229,12 +1229,12 @@
      "win_rate": 48.3
     },
     "design_arena/website": {
-     "elo": 1365,
+     "elo": 1366,
      "rank": 11,
      "win_rate": 55.6
     }
    },
-   "best_elo": 1388,
+   "best_elo": 1386,
    "context": 1048576,
    "hf_id": null,
    "key": "google/gemini-4-argon",
@@ -1252,7 +1252,7 @@
     "design_arena/3d": {
      "elo": 1307,
      "rank": 17,
-     "win_rate": 59.7
+     "win_rate": 59.6
     },
     "design_arena/agenticgamedev": {
      "elo": 1203,
@@ -1280,7 +1280,7 @@
      "win_rate": 57.3
     },
     "design_arena/codetovideo": {
-     "elo": 1240,
+     "elo": 1243,
      "rank": 7,
      "win_rate": 63.1
     },
@@ -1290,12 +1290,12 @@
      "win_rate": 58.2
     },
     "design_arena/fullstack": {
-     "elo": 1355,
+     "elo": 1356,
      "rank": 8,
      "win_rate": 57.5
     },
     "design_arena/gamedev": {
-     "elo": 1317,
+     "elo": 1316,
      "rank": 14,
      "win_rate": 58
     },
@@ -1310,27 +1310,27 @@
      "win_rate": 67.1
     },
     "design_arena/pdf": {
-     "elo": 1238,
+     "elo": 1241,
      "rank": 15,
-     "win_rate": 57.2
+     "win_rate": 57.5
     },
     "design_arena/python-pptxslides": {
      "elo": 1224,
      "rank": 8,
-     "win_rate": 50.9
+     "win_rate": 50.8
     },
     "design_arena/spreadsheet": {
-     "elo": 1241,
+     "elo": 1246,
      "rank": 11,
-     "win_rate": 43.8
+     "win_rate": 43.9
     },
     "design_arena/svg": {
-     "elo": 1354,
+     "elo": 1353,
      "rank": 7,
-     "win_rate": 58.2
+     "win_rate": 58.1
     },
     "design_arena/uicomponent": {
-     "elo": 1333,
+     "elo": 1332,
      "rank": 11,
      "win_rate": 60.5
     },
@@ -1341,8 +1341,8 @@
     },
     "design_arena/website": {
      "elo": 1352,
-     "rank": 17,
-     "win_rate": 56
+     "rank": 18,
+     "win_rate": 55.9
     }
    },
    "best_elo": 1369,
@@ -1366,7 +1366,7 @@
      "win_rate": 57.4
     },
     "design_arena/codecategories": {
-     "elo": 1368,
+     "elo": 1367,
      "rank": 16,
      "win_rate": 53.5
     },
@@ -1376,17 +1376,17 @@
      "win_rate": 59
     },
     "design_arena/gamedev": {
-     "elo": 1296,
+     "elo": 1295,
      "rank": 18,
      "win_rate": 53.4
     },
     "design_arena/svg": {
-     "elo": 1337,
+     "elo": 1336,
      "rank": 14,
-     "win_rate": 53.6
+     "win_rate": 53.4
     },
     "design_arena/uicomponent": {
-     "elo": 1328,
+     "elo": 1327,
      "rank": 13,
      "win_rate": 58.1
     },
@@ -1396,12 +1396,12 @@
      "win_rate": 58.2
     },
     "design_arena/website": {
-     "elo": 1358,
+     "elo": 1359,
      "rank": 14,
      "win_rate": 51.8
     }
    },
-   "best_elo": 1368,
+   "best_elo": 1367,
    "context": 1048576,
    "hf_id": "xiaomi/mimo-v2.6-pro",
    "key": "xiaomi/mimo-v2.6-pro",
@@ -1447,14 +1447,14 @@
      "win_rate": 53.3
     },
     "design_arena/androidnative": {
-     "elo": 1172,
+     "elo": 1173,
      "rank": 21,
      "win_rate": 51.8
     },
     "design_arena/asciiart": {
-     "elo": 1130,
+     "elo": 1129,
      "rank": 54,
-     "win_rate": 43.7
+     "win_rate": 43.4
     },
     "design_arena/codecategories": {
      "elo": 1312,
@@ -1467,19 +1467,19 @@
      "win_rate": 67
     },
     "design_arena/fullstack": {
-     "elo": 1213,
+     "elo": 1214,
      "rank": 28,
      "win_rate": 52.9
     },
     "design_arena/gamedev": {
-     "elo": 1239,
-     "rank": 34,
+     "elo": 1238,
+     "rank": 35,
      "win_rate": 54.5
     },
     "design_arena/godotgamedev": {
-     "elo": 1024,
+     "elo": 1023,
      "rank": 34,
-     "win_rate": 37.9
+     "win_rate": 37.8
     },
     "design_arena/htmlslides": {
      "elo": 1073,
@@ -1492,9 +1492,9 @@
      "win_rate": 49.9
     },
     "design_arena/pdf": {
-     "elo": 1212,
+     "elo": 1213,
      "rank": 18,
-     "win_rate": 55.8
+     "win_rate": 55.6
     },
     "design_arena/pptxslides": {
      "elo": 1241,
@@ -1508,7 +1508,7 @@
     },
     "design_arena/spreadsheet": {
      "elo": 1315,
-     "rank": 4,
+     "rank": 5,
      "win_rate": 72.4
     },
     "design_arena/svg": {
@@ -1527,7 +1527,7 @@
      "win_rate": 50.4
     },
     "design_arena/website": {
-     "elo": 1309,
+     "elo": 1310,
      "rank": 36,
      "win_rate": 52.4
     }
@@ -1535,12 +1535,12 @@
    "best_elo": 1366,
    "context": 204800,
    "hf_id": "z-ai/glm-5.1",
-   "key": "zai/glm-5.1",
+   "key": "auriko/glm-5.1",
    "knowledge_cutoff": null,
    "model_id": "glm-5.1",
    "or_id": "z-ai/glm-5.1",
    "params_b": null,
-   "provider": "zai",
+   "provider": "auriko",
    "tier": "efficient"
   },
   {
@@ -1565,7 +1565,7 @@
     "design_arena/asciiart": {
      "elo": 1269,
      "rank": 10,
-     "win_rate": 54.1
+     "win_rate": 54
     },
     "design_arena/blender3d": {
      "elo": 1053,
@@ -1578,7 +1578,7 @@
      "win_rate": 52.4
     },
     "design_arena/codetovideo": {
-     "elo": 1083,
+     "elo": 1086,
      "rank": 26,
      "win_rate": 39.6
     },
@@ -1588,17 +1588,17 @@
      "win_rate": 57.3
     },
     "design_arena/fullstack": {
-     "elo": 1254,
+     "elo": 1255,
      "rank": 20,
      "win_rate": 47.1
     },
     "design_arena/gamedev": {
-     "elo": 1276,
+     "elo": 1275,
      "rank": 23,
      "win_rate": 50.3
     },
     "design_arena/htmlslides": {
-     "elo": 1034,
+     "elo": 1035,
      "rank": 22,
      "win_rate": 39.9
     },
@@ -1608,9 +1608,9 @@
      "win_rate": 47.3
     },
     "design_arena/pdf": {
-     "elo": 1134,
+     "elo": 1135,
      "rank": 38,
-     "win_rate": 42.2
+     "win_rate": 42.3
     },
     "design_arena/python-pptxslides": {
      "elo": 1157,
@@ -1618,17 +1618,17 @@
      "win_rate": 48.2
     },
     "design_arena/spreadsheet": {
-     "elo": 1027,
-     "rank": 24,
-     "win_rate": 44.3
+     "elo": 1039,
+     "rank": 23,
+     "win_rate": 45.2
     },
     "design_arena/svg": {
-     "elo": 1318,
+     "elo": 1317,
      "rank": 18,
      "win_rate": 53.8
     },
     "design_arena/uicomponent": {
-     "elo": 1291,
+     "elo": 1290,
      "rank": 22,
      "win_rate": 52
     },
@@ -1638,7 +1638,7 @@
      "win_rate": 49.8
     },
     "design_arena/website": {
-     "elo": 1357,
+     "elo": 1358,
      "rank": 15,
      "win_rate": 52.6
     }
@@ -1659,13 +1659,13 @@
    "benchmark_count": 9,
    "benchmarks": {
     "design_arena/3d": {
-     "elo": 1330,
+     "elo": 1331,
      "rank": 16,
      "win_rate": 48
     },
     "design_arena/asciiart": {
      "elo": 1223,
-     "rank": 23,
+     "rank": 24,
      "win_rate": 47.9
     },
     "design_arena/codecategories": {
@@ -1674,46 +1674,97 @@
      "win_rate": 48.7
     },
     "design_arena/dataviz": {
-     "elo": 1278,
-     "rank": 22,
-     "win_rate": 53.9
+     "elo": 1275,
+     "rank": 24,
+     "win_rate": 53.3
     },
     "design_arena/gamedev": {
-     "elo": 1243,
-     "rank": 32,
-     "win_rate": 43.9
+     "elo": 1244,
+     "rank": 31,
+     "win_rate": 44.1
     },
     "design_arena/spreadsheet": {
-     "elo": 1264,
+     "elo": 1268,
      "rank": 9,
      "win_rate": 47.8
     },
     "design_arena/svg": {
-     "elo": 1292,
+     "elo": 1291,
      "rank": 22,
-     "win_rate": 50.7
+     "win_rate": 50.5
     },
     "design_arena/uicomponent": {
-     "elo": 1268,
+     "elo": 1266,
      "rank": 33,
-     "win_rate": 47.7
+     "win_rate": 47.6
     },
     "design_arena/website": {
-     "elo": 1340,
+     "elo": 1342,
      "rank": 20,
-     "win_rate": 51.5
+     "win_rate": 51.6
     }
    },
-   "best_elo": 1341,
+   "best_elo": 1342,
    "context": 1048576,
    "hf_id": "deepseek/deepseek-v4.1-flash-1017",
-   "key": "cheapest-token/deepseek-v4.1-flash-1017",
+   "key": "tencent-tokenhub/deepseek-v4.1-flash-1017",
    "knowledge_cutoff": null,
    "model_id": "deepseek-v4.1-flash-1017",
    "or_id": "deepseek/deepseek-v4.1-flash-1017",
    "params_b": null,
-   "provider": "cheapest-token",
+   "provider": "tencent-tokenhub",
    "tier": "efficient"
+  },
+  {
+   "arch_modality": "text+image+file+audio+video->text",
+   "benchmark_count": 7,
+   "benchmarks": {
+    "design_arena/3d": {
+     "elo": 1217,
+     "rank": 41,
+     "win_rate": 42.3
+    },
+    "design_arena/codecategories": {
+     "elo": 1346,
+     "rank": 20,
+     "win_rate": 50.6
+    },
+    "design_arena/dataviz": {
+     "elo": 1351,
+     "rank": 5,
+     "win_rate": 63.5
+    },
+    "design_arena/gamedev": {
+     "elo": 1237,
+     "rank": 36,
+     "win_rate": 46.4
+    },
+    "design_arena/pdf": {
+     "elo": 1148,
+     "rank": 34,
+     "win_rate": 43.1
+    },
+    "design_arena/uicomponent": {
+     "elo": 1292,
+     "rank": 21,
+     "win_rate": 48.9
+    },
+    "design_arena/website": {
+     "elo": 1353,
+     "rank": 17,
+     "win_rate": 51.6
+    }
+   },
+   "best_elo": 1353,
+   "context": 1048576,
+   "hf_id": "meta/muse-spark-open",
+   "key": "hyper/muse-spark-open",
+   "knowledge_cutoff": null,
+   "model_id": "muse-spark-open",
+   "or_id": "meta/muse-spark-open",
+   "params_b": null,
+   "provider": "hyper",
+   "tier": "workhorse"
   },
   {
    "arch_modality": "text+image+file->text",
@@ -1750,24 +1801,24 @@
      "win_rate": 67.7
     },
     "design_arena/codecategories": {
-     "elo": 1353,
+     "elo": 1352,
      "rank": 18,
      "win_rate": 57.8
     },
     "design_arena/dataviz": {
      "elo": 1299,
-     "rank": 18,
+     "rank": 17,
      "win_rate": 57.8
     },
     "design_arena/fullstack": {
-     "elo": 1326,
+     "elo": 1327,
      "rank": 10,
      "win_rate": 58.2
     },
     "design_arena/gamedev": {
-     "elo": 1308,
+     "elo": 1307,
      "rank": 17,
-     "win_rate": 60.8
+     "win_rate": 60.7
     },
     "design_arena/godotgamedev": {
      "elo": 1260,
@@ -1790,12 +1841,12 @@
      "win_rate": 61.2
     },
     "design_arena/svg": {
-     "elo": 1343,
+     "elo": 1342,
      "rank": 11,
      "win_rate": 62.8
     },
     "design_arena/uicomponent": {
-     "elo": 1304,
+     "elo": 1303,
      "rank": 17,
      "win_rate": 58.3
     },
@@ -1810,7 +1861,7 @@
      "win_rate": 56.2
     }
    },
-   "best_elo": 1353,
+   "best_elo": 1352,
    "context": 1000000,
    "hf_id": null,
    "key": "anthropic/claude-fable-5",
@@ -1819,57 +1870,6 @@
    "or_id": "anthropic/claude-fable-5",
    "params_b": null,
    "provider": "anthropic",
-   "tier": "workhorse"
-  },
-  {
-   "arch_modality": "text+image+file+audio+video->text",
-   "benchmark_count": 7,
-   "benchmarks": {
-    "design_arena/3d": {
-     "elo": 1215,
-     "rank": 41,
-     "win_rate": 41.9
-    },
-    "design_arena/codecategories": {
-     "elo": 1347,
-     "rank": 20,
-     "win_rate": 50.5
-    },
-    "design_arena/dataviz": {
-     "elo": 1344,
-     "rank": 5,
-     "win_rate": 62
-    },
-    "design_arena/gamedev": {
-     "elo": 1239,
-     "rank": 36,
-     "win_rate": 46.4
-    },
-    "design_arena/pdf": {
-     "elo": 1155,
-     "rank": 30,
-     "win_rate": 44.1
-    },
-    "design_arena/uicomponent": {
-     "elo": 1292,
-     "rank": 21,
-     "win_rate": 48.9
-    },
-    "design_arena/website": {
-     "elo": 1352,
-     "rank": 18,
-     "win_rate": 51.6
-    }
-   },
-   "best_elo": 1352,
-   "context": 1048576,
-   "hf_id": "meta/muse-spark-open",
-   "key": "abliteratedllm/muse-spark-open",
-   "knowledge_cutoff": null,
-   "model_id": "muse-spark-open",
-   "or_id": "meta/muse-spark-open",
-   "params_b": null,
-   "provider": "abliteratedllm",
    "tier": "workhorse"
   },
   {
@@ -1892,9 +1892,9 @@
      "win_rate": 53.2
     },
     "design_arena/asciiart": {
-     "elo": 1256,
-     "rank": 15,
-     "win_rate": 52.3
+     "elo": 1258,
+     "rank": 14,
+     "win_rate": 52.5
     },
     "design_arena/blender3d": {
      "elo": 1112,
@@ -1907,7 +1907,7 @@
      "win_rate": 53.5
     },
     "design_arena/codetovideo": {
-     "elo": 1168,
+     "elo": 1171,
      "rank": 17,
      "win_rate": 52.2
     },
@@ -1917,28 +1917,28 @@
      "win_rate": 54.3
     },
     "design_arena/fullstack": {
-     "elo": 1252,
+     "elo": 1253,
      "rank": 21,
-     "win_rate": 43.4
+     "win_rate": 43.5
     },
     "design_arena/gamedev": {
-     "elo": 1295,
-     "rank": 19,
-     "win_rate": 53.2
+     "elo": 1294,
+     "rank": 20,
+     "win_rate": 53.1
     },
     "design_arena/godotgamedev": {
-     "elo": 1226,
+     "elo": 1225,
      "rank": 7,
-     "win_rate": 50.3
+     "win_rate": 50.2
     },
     "design_arena/mobileapps": {
      "elo": 1229,
      "rank": 14,
-     "win_rate": 52.6
+     "win_rate": 52.7
     },
     "design_arena/pdf": {
-     "elo": 1149,
-     "rank": 33,
+     "elo": 1150,
+     "rank": 32,
      "win_rate": 45
     },
     "design_arena/python-pptxslides": {
@@ -1947,27 +1947,27 @@
      "win_rate": 36.2
     },
     "design_arena/spreadsheet": {
-     "elo": 1027,
-     "rank": 23,
-     "win_rate": 27.8
+     "elo": 1033,
+     "rank": 25,
+     "win_rate": 28.2
     },
     "design_arena/svg": {
      "elo": 1327,
      "rank": 15,
-     "win_rate": 53.8
+     "win_rate": 53.9
     },
     "design_arena/uicomponent": {
-     "elo": 1282,
+     "elo": 1281,
      "rank": 25,
-     "win_rate": 51.7
+     "win_rate": 51.6
     },
     "design_arena/webapps": {
      "elo": 1197,
      "rank": 20,
-     "win_rate": 47.4
+     "win_rate": 47.3
     },
     "design_arena/website": {
-     "elo": 1343,
+     "elo": 1344,
      "rank": 19,
      "win_rate": 53.6
     }
@@ -2000,7 +2000,7 @@
     "design_arena/asciiart": {
      "elo": 1265,
      "rank": 12,
-     "win_rate": 52.1
+     "win_rate": 52.3
     },
     "design_arena/blender3d": {
      "elo": 1152,
@@ -2013,9 +2013,9 @@
      "win_rate": 50
     },
     "design_arena/codetovideo": {
-     "elo": 1182,
+     "elo": 1184,
      "rank": 14,
-     "win_rate": 54.4
+     "win_rate": 54.3
     },
     "design_arena/dataviz": {
      "elo": 1270,
@@ -2023,7 +2023,7 @@
      "win_rate": 52
     },
     "design_arena/fullstack": {
-     "elo": 1287,
+     "elo": 1288,
      "rank": 16,
      "win_rate": 47.6
     },
@@ -2033,19 +2033,19 @@
      "win_rate": 50.9
     },
     "design_arena/godotgamedev": {
-     "elo": 1238,
+     "elo": 1237,
      "rank": 5,
      "win_rate": 52.4
     },
     "design_arena/mobileapps": {
      "elo": 1227,
-     "rank": 17,
+     "rank": 16,
      "win_rate": 54.3
     },
     "design_arena/pdf": {
-     "elo": 1201,
+     "elo": 1203,
      "rank": 19,
-     "win_rate": 52
+     "win_rate": 52.2
     },
     "design_arena/python-pptxslides": {
      "elo": 1149,
@@ -2053,8 +2053,8 @@
      "win_rate": 41.1
     },
     "design_arena/spreadsheet": {
-     "elo": 1025,
-     "rank": 25,
+     "elo": 1034,
+     "rank": 24,
      "win_rate": 42.5
     },
     "design_arena/svg": {
@@ -2063,9 +2063,9 @@
      "win_rate": 54.8
     },
     "design_arena/uicomponent": {
-     "elo": 1298,
+     "elo": 1297,
      "rank": 19,
-     "win_rate": 52.3
+     "win_rate": 52.4
     },
     "design_arena/webapps": {
      "elo": 1206,
@@ -2073,7 +2073,7 @@
      "win_rate": 45.7
     },
     "design_arena/website": {
-     "elo": 1339,
+     "elo": 1340,
      "rank": 22,
      "win_rate": 49.5
     }
@@ -2096,58 +2096,58 @@
     "design_arena/3d": {
      "elo": 1304,
      "rank": 18,
-     "win_rate": 54.5
+     "win_rate": 54.6
     },
     "design_arena/asciiart": {
-     "elo": 1213,
+     "elo": 1204,
      "rank": 25,
-     "win_rate": 48.8
+     "win_rate": 48
     },
     "design_arena/codecategories": {
-     "elo": 1336,
+     "elo": 1335,
      "rank": 24,
      "win_rate": 50.7
     },
     "design_arena/dataviz": {
-     "elo": 1275,
+     "elo": 1274,
      "rank": 26,
      "win_rate": 50.6
     },
     "design_arena/gamedev": {
-     "elo": 1313,
+     "elo": 1312,
      "rank": 16,
-     "win_rate": 52.7
+     "win_rate": 52.8
     },
     "design_arena/pdf": {
-     "elo": 1190,
+     "elo": 1191,
      "rank": 23,
-     "win_rate": 53.4
+     "win_rate": 53.3
     },
     "design_arena/svg": {
-     "elo": 1261,
+     "elo": 1259,
      "rank": 28,
-     "win_rate": 45.4
+     "win_rate": 45.2
     },
     "design_arena/uicomponent": {
      "elo": 1262,
      "rank": 36,
-     "win_rate": 49.7
+     "win_rate": 49.9
     },
     "design_arena/website": {
-     "elo": 1304,
+     "elo": 1305,
      "rank": 43,
      "win_rate": 48.5
     }
    },
-   "best_elo": 1336,
+   "best_elo": 1335,
    "context": 1000000,
    "hf_id": null,
-   "key": "cortecs/claude-haiku-5.5",
+   "key": "github-copilot/claude-haiku-5.5",
    "knowledge_cutoff": null,
    "model_id": "claude-haiku-5.5",
    "or_id": "anthropic/claude-haiku-5.5",
    "params_b": null,
-   "provider": "cortecs",
+   "provider": "github-copilot",
    "tier": "workhorse"
   },
   {
@@ -2162,20 +2162,20 @@
     "design_arena/asciiart": {
      "elo": 1190,
      "rank": 30,
-     "win_rate": 45.7
+     "win_rate": 45.3
     },
     "design_arena/codecategories": {
-     "elo": 1335,
+     "elo": 1334,
      "rank": 25,
      "win_rate": 52.1
     },
     "design_arena/dataviz": {
-     "elo": 1243,
-     "rank": 41,
-     "win_rate": 49.9
+     "elo": 1244,
+     "rank": 40,
+     "win_rate": 50.1
     },
     "design_arena/gamedev": {
-     "elo": 1271,
+     "elo": 1270,
      "rank": 24,
      "win_rate": 50.4
     },
@@ -2190,9 +2190,9 @@
      "win_rate": 52.2
     },
     "design_arena/pdf": {
-     "elo": 1267,
-     "rank": 8,
-     "win_rate": 62.8
+     "elo": 1266,
+     "rank": 7,
+     "win_rate": 62.3
     },
     "design_arena/python-pptxslides": {
      "elo": 1217,
@@ -2205,7 +2205,7 @@
      "win_rate": 50.8
     },
     "design_arena/uicomponent": {
-     "elo": 1278,
+     "elo": 1277,
      "rank": 27,
      "win_rate": 53
     },
@@ -2215,20 +2215,20 @@
      "win_rate": 54.2
     },
     "design_arena/website": {
-     "elo": 1326,
+     "elo": 1327,
      "rank": 25,
      "win_rate": 52.4
     }
    },
-   "best_elo": 1335,
+   "best_elo": 1334,
    "context": 1048576,
    "hf_id": "z-ai/glm-5.3",
-   "key": "opper/glm-5.3",
+   "key": "tencent-tokenhub/glm-5.3",
    "knowledge_cutoff": null,
    "model_id": "glm-5.3",
    "or_id": "z-ai/glm-5.3",
    "params_b": null,
-   "provider": "opper",
+   "provider": "tencent-tokenhub",
    "tier": "workhorse"
   },
   {
@@ -2241,12 +2241,12 @@
      "win_rate": 49.3
     },
     "design_arena/asciiart": {
-     "elo": 1102,
+     "elo": 1103,
      "rank": 63,
      "win_rate": 43.1
     },
     "design_arena/codecategories": {
-     "elo": 1247,
+     "elo": 1246,
      "rank": 67,
      "win_rate": 48.9
     },
@@ -2256,27 +2256,27 @@
      "win_rate": 40.7
     },
     "design_arena/gamedev": {
-     "elo": 1169,
+     "elo": 1168,
      "rank": 66,
      "win_rate": 50.2
     },
     "design_arena/svg": {
-     "elo": 1196,
+     "elo": 1195,
      "rank": 51,
      "win_rate": 48.4
     },
     "design_arena/uicomponent": {
-     "elo": 1148,
+     "elo": 1147,
      "rank": 84,
      "win_rate": 44.6
     },
     "design_arena/website": {
-     "elo": 1247,
+     "elo": 1248,
      "rank": 68,
      "win_rate": 49.1
     }
    },
-   "best_elo": 1247,
+   "best_elo": 1248,
    "context": 1048576,
    "hf_id": "deepseek/deepseek-v4-flash",
    "key": "deepseek/deepseek-v4-flash",
@@ -2307,8 +2307,8 @@
      "win_rate": 38.4
     },
     "design_arena/gamedev": {
-     "elo": 810,
-     "rank": 147,
+     "elo": 809,
+     "rank": 148,
      "win_rate": 33.7
     },
     "design_arena/uicomponent": {
@@ -2348,17 +2348,17 @@
      "win_rate": 39.3
     },
     "design_arena/gamedev": {
-     "elo": 745,
-     "rank": 148,
+     "elo": 744,
+     "rank": 149,
      "win_rate": 27.4
     },
     "design_arena/uicomponent": {
-     "elo": 752,
+     "elo": 751,
      "rank": 144,
      "win_rate": 25.5
     },
     "design_arena/website": {
-     "elo": 790,
+     "elo": 791,
      "rank": 153,
      "win_rate": 22.7
     }
@@ -2465,7 +2465,7 @@
    "tier": "efficient"
   }
  ],
- "fetched": "2026-11-26T11:00:10.907422+00:00",
+ "fetched": "2026-11-27T11:00:10.634015+00:00",
  "frontier": {
   "_meta": {
    "benchmark_categories": 382,
@@ -2474,14 +2474,14 @@
     "frontier": 9,
     "workhorse": 10
    },
-   "cap_dropped": 95,
-   "generated": "2026-11-26T11:00:10.659060+00:00",
+   "cap_dropped": 98,
+   "generated": "2026-11-27T11:00:10.352043+00:00",
    "hysteresis_holds": 0,
    "total": 35
   },
   "models": [
    {
-    "elo": 1540,
+    "elo": 1539,
     "hf_id": null,
     "key": "github-copilot/claude-fable-5.2",
     "n_cats": 11,
@@ -2490,7 +2490,7 @@
     "tier": "frontier"
    },
    {
-    "elo": 1489,
+    "elo": 1486,
     "hf_id": null,
     "key": "google/gemini-4-neon",
     "n_cats": 7,
@@ -2499,11 +2499,20 @@
     "tier": "frontier"
    },
    {
-    "elo": 1469,
+    "elo": 1471,
     "hf_id": null,
     "key": "google/gemini-4-carbon",
     "n_cats": 11,
     "or_id": "google/gemini-4-carbon",
+    "params_b": null,
+    "tier": "frontier"
+   },
+   {
+    "elo": 1454,
+    "hf_id": null,
+    "key": "github-copilot/claude-opus-5.5",
+    "n_cats": 16,
+    "or_id": "anthropic/claude-opus-5.5",
     "params_b": null,
     "tier": "frontier"
    },
@@ -2517,34 +2526,25 @@
     "tier": "frontier"
    },
    {
-    "elo": 1453,
-    "hf_id": null,
-    "key": "jzstoken/claude-opus-5.5",
-    "n_cats": 16,
-    "or_id": "anthropic/claude-opus-5.5",
-    "params_b": null,
-    "tier": "frontier"
-   },
-   {
     "elo": 1445,
     "hf_id": null,
-    "key": "concentrate/muse-wonder",
+    "key": "venice/muse-wonder",
     "n_cats": 14,
     "or_id": "meta/muse-wonder",
     "params_b": null,
     "tier": "frontier"
    },
    {
-    "elo": 1429,
+    "elo": 1427,
     "hf_id": null,
-    "key": "jzstoken/claude-sonnet-5.5",
+    "key": "github-copilot/claude-sonnet-5.5",
     "n_cats": 16,
     "or_id": "anthropic/claude-sonnet-5.5",
     "params_b": null,
     "tier": "frontier"
    },
    {
-    "elo": 1422,
+    "elo": 1421,
     "hf_id": "moonshotai/kimi-k3.1-pro",
     "key": "moonshotai/kimi-k3.1-pro",
     "n_cats": 16,
@@ -2553,7 +2553,7 @@
     "tier": "frontier"
    },
    {
-    "elo": 1415,
+    "elo": 1416,
     "hf_id": null,
     "key": "openai/gpt-6.1-sol",
     "n_cats": 15,
@@ -2562,16 +2562,7 @@
     "tier": "efficient"
    },
    {
-    "elo": 1411,
-    "hf_id": null,
-    "key": "steadyrouter/grok-4.7",
-    "n_cats": 12,
-    "or_id": "x-ai/grok-4.7",
-    "params_b": null,
-    "tier": "efficient"
-   },
-   {
-    "elo": 1408,
+    "elo": 1409,
     "hf_id": null,
     "key": "meta/muse-spark-1.3",
     "n_cats": 18,
@@ -2589,7 +2580,16 @@
     "tier": "efficient"
    },
    {
-    "elo": 1400,
+    "elo": 1406,
+    "hf_id": null,
+    "key": "github-copilot/grok-4.7",
+    "n_cats": 12,
+    "or_id": "x-ai/grok-4.7",
+    "params_b": null,
+    "tier": "efficient"
+   },
+   {
+    "elo": 1399,
     "hf_id": null,
     "key": "concentrate/muse-ember",
     "n_cats": 6,
@@ -2600,14 +2600,14 @@
    {
     "elo": 1393,
     "hf_id": null,
-    "key": "korouter/claude-fable-5.1",
+    "key": "github-copilot/claude-fable-5.1",
     "n_cats": 15,
     "or_id": "anthropic/claude-fable-5.1",
     "params_b": null,
     "tier": "efficient"
    },
    {
-    "elo": 1388,
+    "elo": 1386,
     "hf_id": null,
     "key": "google/gemini-4-argon",
     "n_cats": 14,
@@ -2625,7 +2625,7 @@
     "tier": "efficient"
    },
    {
-    "elo": 1368,
+    "elo": 1367,
     "hf_id": "xiaomi/mimo-v2.6-pro",
     "key": "xiaomi/mimo-v2.6-pro",
     "n_cats": 8,
@@ -2636,7 +2636,7 @@
    {
     "elo": 1366,
     "hf_id": "z-ai/glm-5.1",
-    "key": "zai/glm-5.1",
+    "key": "auriko/glm-5.1",
     "n_cats": 23,
     "or_id": "z-ai/glm-5.1",
     "params_b": null,
@@ -2652,9 +2652,9 @@
     "tier": "efficient"
    },
    {
-    "elo": 1341,
+    "elo": 1342,
     "hf_id": "deepseek/deepseek-v4.1-flash-1017",
-    "key": "cheapest-token/deepseek-v4.1-flash-1017",
+    "key": "tencent-tokenhub/deepseek-v4.1-flash-1017",
     "n_cats": 9,
     "or_id": "deepseek/deepseek-v4.1-flash-1017",
     "params_b": null,
@@ -2662,19 +2662,19 @@
    },
    {
     "elo": 1353,
-    "hf_id": null,
-    "key": "anthropic/claude-fable-5",
-    "n_cats": 18,
-    "or_id": "anthropic/claude-fable-5",
+    "hf_id": "meta/muse-spark-open",
+    "key": "hyper/muse-spark-open",
+    "n_cats": 7,
+    "or_id": "meta/muse-spark-open",
     "params_b": null,
     "tier": "workhorse"
    },
    {
     "elo": 1352,
-    "hf_id": "meta/muse-spark-open",
-    "key": "abliteratedllm/muse-spark-open",
-    "n_cats": 7,
-    "or_id": "meta/muse-spark-open",
+    "hf_id": null,
+    "key": "anthropic/claude-fable-5",
+    "n_cats": 18,
+    "or_id": "anthropic/claude-fable-5",
     "params_b": null,
     "tier": "workhorse"
    },
@@ -2697,25 +2697,25 @@
     "tier": "workhorse"
    },
    {
-    "elo": 1336,
+    "elo": 1335,
     "hf_id": null,
-    "key": "cortecs/claude-haiku-5.5",
+    "key": "github-copilot/claude-haiku-5.5",
     "n_cats": 9,
     "or_id": "anthropic/claude-haiku-5.5",
     "params_b": null,
     "tier": "workhorse"
    },
    {
-    "elo": 1335,
+    "elo": 1334,
     "hf_id": "z-ai/glm-5.3",
-    "key": "opper/glm-5.3",
+    "key": "tencent-tokenhub/glm-5.3",
     "n_cats": 13,
     "or_id": "z-ai/glm-5.3",
     "params_b": null,
     "tier": "workhorse"
    },
    {
-    "elo": 1247,
+    "elo": 1248,
     "hf_id": "deepseek/deepseek-v4-flash",
     "key": "deepseek/deepseek-v4-flash",
     "n_cats": 8,
@@ -2814,7 +2814,7 @@
    }
   }
  },
- "frontier_fingerprint": "f7a4430d26acd1d94efddfd860c64741b419a39a1aa07acfd2db359a0ccb80d3",
+ "frontier_fingerprint": "97ce21d184a5d7813af04f1033c7392fcca8cfe3e89bd2e2b97ea6217b26dd49",
  "hf": {
   "Qwen/Qwen3.8-27B": {
    "architecture": [
@@ -2964,5 +2964,5 @@
    "parameters_b": null
   }
  },
- "or_model_count": 474
+ "or_model_count": 477
 }

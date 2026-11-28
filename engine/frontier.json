@@ -18,11 +18,11 @@
   },
   "models": [
     {
-      "key": "github-copilot/claude-fable-5.2",
+      "key": "requesty/claude-fable-5.2",
       "or_id": "anthropic/claude-fable-5.2",
       "hf_id": null,
       "tier": "frontier",
-      "elo": 1539,
+      "elo": 1538,
       "n_cats": 11,
       "params_b": null
     },
@@ -45,11 +45,11 @@
       "params_b": null
     },
     {
-      "key": "github-copilot/claude-opus-5.5",
+      "key": "edenai/claude-opus-5.5",
       "or_id": "anthropic/claude-opus-5.5",
       "hf_id": null,
       "tier": "frontier",
-      "elo": 1454,
+      "elo": 1452,
       "n_cats": 16,
       "params_b": null
     },
@@ -58,7 +58,7 @@
       "or_id": "google/gemini-4-hydrogen",
       "hf_id": null,
       "tier": "frontier",
-      "elo": 1454,
+      "elo": 1448,
       "n_cats": 10,
       "params_b": null
     },
@@ -72,7 +72,7 @@
       "params_b": null
     },
     {
-      "key": "github-copilot/claude-sonnet-5.5",
+      "key": "edenai/claude-sonnet-5.5",
       "or_id": "anthropic/claude-sonnet-5.5",
       "hf_id": null,
       "tier": "frontier",
@@ -85,7 +85,7 @@
       "or_id": "moonshotai/kimi-k3.1-pro",
       "hf_id": "moonshotai/kimi-k3.1-pro",
       "tier": "frontier",
-      "elo": 1421,
+      "elo": 1422,
       "n_cats": 16,
       "params_b": null
     },
@@ -94,7 +94,7 @@
       "or_id": "openai/gpt-6.1-sol",
       "hf_id": null,
       "tier": "efficient",
-      "elo": 1416,
+      "elo": 1417,
       "n_cats": 15,
       "params_b": null
     },
@@ -117,7 +117,7 @@
       "params_b": null
     },
     {
-      "key": "github-copilot/grok-4.7",
+      "key": "edenai/grok-4.7",
       "or_id": "x-ai/grok-4.7",
       "hf_id": null,
       "tier": "efficient",
@@ -135,7 +135,7 @@
       "params_b": null
     },
     {
-      "key": "github-copilot/claude-fable-5.1",
+      "key": "edenai/claude-fable-5.1",
       "or_id": "anthropic/claude-fable-5.1",
       "hf_id": null,
       "tier": "efficient",
@@ -148,7 +148,7 @@
       "or_id": "google/gemini-4-argon",
       "hf_id": null,
       "tier": "efficient",
-      "elo": 1386,
+      "elo": 1384,
       "n_cats": 14,
       "params_b": null
     },
@@ -171,7 +171,7 @@
       "params_b": null
     },
     {
-      "key": "auriko/glm-5.1",
+      "key": "zai/glm-5.1",
       "or_id": "z-ai/glm-5.1",
       "hf_id": "z-ai/glm-5.1",
       "tier": "efficient",
@@ -189,7 +189,7 @@
       "params_b": null
     },
     {
-      "key": "tencent-tokenhub/deepseek-v4.1-flash-1017",
+      "key": "liquid/deepseek-v4.1-flash-1017",
       "or_id": "deepseek/deepseek-v4.1-flash-1017",
       "hf_id": "deepseek/deepseek-v4.1-flash-1017",
       "tier": "efficient",
@@ -198,7 +198,7 @@
       "params_b": null
     },
     {
-      "key": "hyper/muse-spark-open",
+      "key": "venice/muse-spark-open",
       "or_id": "meta/muse-spark-open",
       "hf_id": "meta/muse-spark-open",
       "tier": "workhorse",
@@ -234,7 +234,7 @@
       "params_b": null
     },
     {
-      "key": "github-copilot/claude-haiku-5.5",
+      "key": "edenai/claude-haiku-5.5",
       "or_id": "anthropic/claude-haiku-5.5",
       "hf_id": null,
       "tier": "workhorse",
@@ -243,11 +243,11 @@
       "params_b": null
     },
     {
-      "key": "tencent-tokenhub/glm-5.3",
+      "key": "liquid/glm-5.3",
       "or_id": "z-ai/glm-5.3",
       "hf_id": "z-ai/glm-5.3",
       "tier": "workhorse",
-      "elo": 1334,
+      "elo": 1335,
       "n_cats": 13,
       "params_b": null
     },
@@ -261,7 +261,7 @@
       "params_b": null
     },
     {
-      "key": "helicone/llama-4-maverick",
+      "key": "digitalocean/llama-4-maverick",
       "or_id": "meta-llama/llama-4-maverick",
       "hf_id": "meta-llama/llama-4-maverick",
       "tier": "workhorse",
@@ -334,7 +334,7 @@
     }
   ],
   "_meta": {
-    "generated": "2026-11-27T11:00:10.352043+00:00",
+    "generated": "2026-11-28T11:00:08.730274+00:00",
     "total": 35,
     "by_tier": {
       "frontier": 9,
@@ -343,6 +343,6 @@
     },
     "benchmark_categories": 382,
     "hysteresis_holds": 0,
-    "cap_dropped": 98
+    "cap_dropped": 97
   }
 }
